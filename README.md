@@ -1,4 +1,7 @@
-![Banner](./public/banner.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./public/banner-dark.png">
+  <img alt="Incline banner light mode" src="./public/banner.png">
+</picture>
 
 # QuikkDesign
 
