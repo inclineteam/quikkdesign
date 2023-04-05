@@ -9,6 +9,7 @@ specifiers:
   '@codemirror/view': ^6.9.3
   '@emmetio/codemirror6-plugin': ^0.2.0
   '@ionic/react': ^7.0.0
+  '@lezer/highlight': ^1.1.4
   '@replit/codemirror-css-color-picker': ^6.0.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
@@ -36,6 +37,7 @@ dependencies:
   '@codemirror/view': 6.9.3
   '@emmetio/codemirror6-plugin': 0.2.0_gda2zaecjvtg56ojh5iectdbe4
   '@ionic/react': 7.0.0_biqbaboplfbrettd7655fr4n2y
+  '@lezer/highlight': 1.1.4
   '@replit/codemirror-css-color-picker': 6.0.0_ipi6fyicmvtccbdgcmxxogx7ni
   '@uiw/react-codemirror': 4.19.11_ba7ybu4qut55piebaady2x4xda
   akar-icons: 1.9.25_react@18.2.0

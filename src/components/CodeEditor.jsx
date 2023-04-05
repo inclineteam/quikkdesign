@@ -1,4 +1,5 @@
 import ReactCodeMirror from "@uiw/react-codemirror";
+import { oneDark } from "../themes/onedark";
 
 const CodeEditor = ({ lang, value, update }) => {
   return (
@@ -8,7 +9,8 @@ const CodeEditor = ({ lang, value, update }) => {
         extensions={[lang()]}
         value={value}
         onChange={(val) => update(val)}
-        className="w-full"
+        className="w-full text-sm [&>.cm-focused]:outline-none"
+        theme={oneDark}
       />
     </div>
   );

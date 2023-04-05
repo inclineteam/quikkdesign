@@ -17,6 +17,7 @@
     "@codemirror/view": "^6.9.3",
     "@emmetio/codemirror6-plugin": "^0.2.0",
     "@ionic/react": "^7.0.0",
+    "@lezer/highlight": "^1.1.4",
     "@replit/codemirror-css-color-picker": "^6.0.0",
     "@uiw/react-codemirror": "^4.19.11",
     "akar-icons": "^1.9.25",
