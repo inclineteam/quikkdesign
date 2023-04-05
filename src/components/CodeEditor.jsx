@@ -1,9 +1,15 @@
 import ReactCodeMirror from "@uiw/react-codemirror";
 
-const CodeEditor = ({ lang }) => {
+const CodeEditor = ({ lang, value, update }) => {
   return (
-    <div>
-      <ReactCodeMirror extensions={[lang()]} />
+    <div className="w-full">
+      <ReactCodeMirror
+        height="70vh"
+        extensions={[lang()]}
+        value={value}
+        onChange={(val) => update(val)}
+        className="w-full"
+      />
     </div>
   );
 };
