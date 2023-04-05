@@ -1,10 +1,15 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@codemirror/lang-css': ^6.1.1
+  '@codemirror/lang-html': ^6.4.3
+  '@codemirror/lang-javascript': ^6.1.5
   '@codemirror/language': ^6.6.0
   '@codemirror/state': ^6.2.0
   '@codemirror/view': ^6.9.3
+  '@emmetio/codemirror6-plugin': ^0.2.0
   '@ionic/react': ^7.0.0
+  '@replit/codemirror-css-color-picker': ^6.0.0
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@uiw/react-codemirror': ^4.19.11
@@ -14,6 +19,7 @@ specifiers:
   clsx: ^1.2.1
   ionicons: ^7.1.0
   postcss: ^8.4.21
+  prettier: ^2.8.7
   react: ^18.2.0
   react-dom: ^18.2.0
   tailwindcss: ^3.3.1
@@ -21,14 +27,20 @@ specifiers:
   zustand: ^4.3.7
 
 dependencies:
+  '@codemirror/lang-css': 6.1.1_@codemirror+view@6.9.3
+  '@codemirror/lang-html': 6.4.3
+  '@codemirror/lang-javascript': 6.1.5
   '@codemirror/language': 6.6.0
   '@codemirror/state': 6.2.0
   '@codemirror/view': 6.9.3
+  '@emmetio/codemirror6-plugin': 0.2.0_gda2zaecjvtg56ojh5iectdbe4
   '@ionic/react': 7.0.0_biqbaboplfbrettd7655fr4n2y
+  '@replit/codemirror-css-color-picker': 6.0.0_ipi6fyicmvtccbdgcmxxogx7ni
   '@uiw/react-codemirror': 4.19.11_ba7ybu4qut55piebaady2x4xda
   akar-icons: 1.9.25_react@18.2.0
   clsx: 1.2.1
   ionicons: 7.1.0
+  prettier: 2.8.7
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   zustand: 4.3.7_react@18.2.0
@@ -301,6 +313,43 @@ packages:
       '@lezer/common': 1.0.2
     dev: false
 
+  /@codemirror/lang-css/6.1.1_@codemirror+view@6.9.3:
+    resolution: {integrity: sha512-P6jdNEHyRcqqDgbvHYyC9Wxkek0rnG3a9aVSRi4a7WrjPbQtBTaOmvYpXmm13zZMAatO4Oqpac+0QZs7sy+LnQ==}
+    dependencies:
+      '@codemirror/autocomplete': 6.4.2_ipi6fyicmvtccbdgcmxxogx7ni
+      '@codemirror/language': 6.6.0
+      '@codemirror/state': 6.2.0
+      '@lezer/css': 1.1.1
+    transitivePeerDependencies:
+      - '@codemirror/view'
+    dev: false
+
+  /@codemirror/lang-html/6.4.3:
+    resolution: {integrity: sha512-VKzQXEC8nL69Jg2hvAFPBwOdZNvL8tMFOrdFwWpU+wc6a6KEkndJ/19R5xSaglNX6v2bttm8uIEFYxdQDcIZVQ==}
+    dependencies:
+      '@codemirror/autocomplete': 6.4.2_ipi6fyicmvtccbdgcmxxogx7ni
+      '@codemirror/lang-css': 6.1.1_@codemirror+view@6.9.3
+      '@codemirror/lang-javascript': 6.1.5
+      '@codemirror/language': 6.6.0
+      '@codemirror/state': 6.2.0
+      '@codemirror/view': 6.9.3
+      '@lezer/common': 1.0.2
+      '@lezer/css': 1.1.1
+      '@lezer/html': 1.3.4
+    dev: false
+
+  /@codemirror/lang-javascript/6.1.5:
+    resolution: {integrity: sha512-BS2SmI1IXxWqMPhbJ0DC3eAHAK9V9XvdHMSqwvTBnmh5xFALt+cVDg7XE/A1dxdxzXYXyeqGddgqx1rQv7AYaw==}
+    dependencies:
+      '@codemirror/autocomplete': 6.4.2_ipi6fyicmvtccbdgcmxxogx7ni
+      '@codemirror/language': 6.6.0
+      '@codemirror/lint': 6.2.0
+      '@codemirror/state': 6.2.0
+      '@codemirror/view': 6.9.3
+      '@lezer/common': 1.0.2
+      '@lezer/javascript': 1.4.2
+    dev: false
+
   /@codemirror/language/6.6.0:
     resolution: {integrity: sha512-cwUd6lzt3MfNYOobdjf14ZkLbJcnv4WtndYaoBkbor/vF+rCNguMPK0IRtvZJG4dsWiaWPcK8x1VijhvSxnstg==}
     dependencies:
@@ -347,6 +396,51 @@ packages:
       '@codemirror/state': 6.2.0
       style-mod: 4.0.2
       w3c-keyname: 2.2.6
+    dev: false
+
+  /@emmetio/abbreviation/2.3.1:
+    resolution: {integrity: sha512-QXgYlXZGprqb6aCBJPPWVBN/Jb69khJF73GGJkOk//PoMgSbPGuaHn1hCRolctnzlBHjCIC6Om97Pw46/1A23g==}
+    dependencies:
+      '@emmetio/scanner': 1.0.2
+    dev: false
+
+  /@emmetio/codemirror6-plugin/0.2.0_gda2zaecjvtg56ojh5iectdbe4:
+    resolution: {integrity: sha512-F+Aw0I9imEudLstDLQtXDAmx04M631ye+W1bhf+o07Wy4O9btnA54CPOkXLEjWEWve+8hh9JWvH/y4A8mFiF0w==}
+    peerDependencies:
+      '@codemirror/autocomplete': ^6.1.0
+      '@codemirror/commands': ^6.0.1
+      '@codemirror/highlight': ^0.19.8
+      '@codemirror/history': ^0.19.2
+      '@codemirror/lang-css': ^6.0.0
+      '@codemirror/lang-html': ^6.1.0
+      '@codemirror/language': ^6.2.1
+      '@codemirror/state': ^6.1.1
+      '@codemirror/view': ^6.2.0
+      '@lezer/common': ^1.0.0
+    dependencies:
+      '@codemirror/lang-css': 6.1.1_@codemirror+view@6.9.3
+      '@codemirror/lang-html': 6.4.3
+      '@codemirror/language': 6.6.0
+      '@codemirror/state': 6.2.0
+      '@codemirror/view': 6.9.3
+      '@emmetio/math-expression': 1.0.4
+      emmet: 2.4.1
+    dev: false
+
+  /@emmetio/css-abbreviation/2.1.6:
+    resolution: {integrity: sha512-bvuPogt0OvwcILRg+ZD/oej1H72xwOhUDPWOmhCWLJrZZ8bMTazsWnvw8a8noaaVqUhOE9PsC0tYgGVv5N7fsw==}
+    dependencies:
+      '@emmetio/scanner': 1.0.2
+    dev: false
+
+  /@emmetio/math-expression/1.0.4:
+    resolution: {integrity: sha512-1m7y8/VeXCAfgFoPGTerbqCIadApcIINujd3TaM/LRLPPKiod8aT1PPmh542spnsUSsSnZJjbuF7xiO4WFA42g==}
+    dependencies:
+      '@emmetio/scanner': 1.0.2
+    dev: false
+
+  /@emmetio/scanner/1.0.2:
+    resolution: {integrity: sha512-1ESCGgXRgn1r29hRmz8K0G4Ywr5jDWezMgRnICComBCWmg3znLWU8+tmakuM1og1Vn4W/sauvlABl/oq2pve8w==}
     dev: false
 
   /@esbuild/android-arm/0.17.15:
@@ -610,10 +704,32 @@ packages:
     resolution: {integrity: sha512-SVgiGtMnMnW3ActR8SXgsDhw7a0w0ChHSYAyAUxxrOiJ1OqYWEKk/xJd84tTSPo1mo6DXLObAJALNnd0Hrv7Ng==}
     dev: false
 
+  /@lezer/css/1.1.1:
+    resolution: {integrity: sha512-mSjx+unLLapEqdOYDejnGBokB5+AiJKZVclmud0MKQOKx3DLJ5b5VTCstgDDknR6iIV4gVrN6euzsCnj0A2gQA==}
+    dependencies:
+      '@lezer/highlight': 1.1.4
+      '@lezer/lr': 1.3.3
+    dev: false
+
   /@lezer/highlight/1.1.4:
     resolution: {integrity: sha512-IECkFmw2l7sFcYXrV8iT9GeY4W0fU4CxX0WMwhmhMIVjoDdD1Hr6q3G2NqVtLg/yVe5n7i4menG3tJ2r4eCrPQ==}
     dependencies:
       '@lezer/common': 1.0.2
+    dev: false
+
+  /@lezer/html/1.3.4:
+    resolution: {integrity: sha512-HdJYMVZcT4YsMo7lW3ipL4NoyS2T67kMPuSVS5TgLGqmaCjEU/D6xv7zsa1ktvTK5lwk7zzF1e3eU6gBZIPm5g==}
+    dependencies:
+      '@lezer/common': 1.0.2
+      '@lezer/highlight': 1.1.4
+      '@lezer/lr': 1.3.3
+    dev: false
+
+  /@lezer/javascript/1.4.2:
+    resolution: {integrity: sha512-77qdAD4zanmImPiAu4ibrMUzRc79UHoccdPa+Ey5iwS891TAkhnMAodUe17T7zV7tnF7e9HXM0pfmjoGEhrppg==}
+    dependencies:
+      '@lezer/highlight': 1.1.4
+      '@lezer/lr': 1.3.3
     dev: false
 
   /@lezer/lr/1.3.3:
@@ -642,6 +758,18 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
     dev: true
+
+  /@replit/codemirror-css-color-picker/6.0.0_ipi6fyicmvtccbdgcmxxogx7ni:
+    resolution: {integrity: sha512-Uks4AZJo2OlTgQIUybRN5Gw4RNGiy6Vd2SqiHu3VZppIzSkKJCmbG0C2VgZTuMXNOTk90zOStTrjtKjjUNCD4g==}
+    peerDependencies:
+      '@codemirror/language': ^6.0.0
+      '@codemirror/state': ^6.0.0
+      '@codemirror/view': ^6.0.0
+    dependencies:
+      '@codemirror/language': 6.6.0
+      '@codemirror/state': 6.2.0
+      '@codemirror/view': 6.9.3
+    dev: false
 
   /@stencil/core/2.22.3:
     resolution: {integrity: sha512-kmVA0M/HojwsfkeHsifvHVIYe4l5tin7J5+DLgtl8h6WWfiMClND5K3ifCXXI2ETDNKiEk21p6jql3Fx9o2rng==}
@@ -926,6 +1054,13 @@ packages:
   /electron-to-chromium/1.4.352:
     resolution: {integrity: sha512-ikFUEyu5/q+wJpMOxWxTaEVk2M1qKqTGKKyfJmod1CPZxKfYnxVS41/GCBQg21ItBpZybyN8sNpRqCUGm+Zc4Q==}
     dev: true
+
+  /emmet/2.4.1:
+    resolution: {integrity: sha512-8rZn/3b0WRT21UeGjQ+bzUqg3up6xBKqRjeWRZA1mrzHokNf4brqPx88XQ53+s9lK2p/pWI2VlTIu1S59OwDtA==}
+    dependencies:
+      '@emmetio/abbreviation': 2.3.1
+      '@emmetio/css-abbreviation': 2.1.6
+    dev: false
 
   /esbuild/0.17.15:
     resolution: {integrity: sha512-LBUV2VsUIc/iD9ME75qhT4aJj0r75abCVS0jakhFzOtR7TQsqQA5w0tZ+KTKnwl3kXE0MhskNdHDh/I5aCR1Zw==}
@@ -1317,6 +1452,12 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
+
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}

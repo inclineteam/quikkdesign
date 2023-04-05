@@ -9,14 +9,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-css": "^6.1.1",
+    "@codemirror/lang-html": "^6.4.3",
+    "@codemirror/lang-javascript": "^6.1.5",
     "@codemirror/language": "^6.6.0",
     "@codemirror/state": "^6.2.0",
     "@codemirror/view": "^6.9.3",
+    "@emmetio/codemirror6-plugin": "^0.2.0",
     "@ionic/react": "^7.0.0",
+    "@replit/codemirror-css-color-picker": "^6.0.0",
     "@uiw/react-codemirror": "^4.19.11",
     "akar-icons": "^1.9.25",
     "clsx": "^1.2.1",
     "ionicons": "^7.1.0",
+    "prettier": "^2.8.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "zustand": "^4.3.7"
