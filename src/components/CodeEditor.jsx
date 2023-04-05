@@ -3,7 +3,7 @@ import { oneDark } from "../themes/onedark";
 
 const CodeEditor = ({ lang, value, update }) => {
   return (
-    <div className="w-full">
+    <div className="h-max w-full border-b border-l border-white/10 first:border-l-0">
       <ReactCodeMirror
         height="70vh"
         extensions={[lang()]}
