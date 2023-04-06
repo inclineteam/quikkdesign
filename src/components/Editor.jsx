@@ -30,7 +30,7 @@ const Editor = () => {
     <div className="h-screen bg-[#282c34]">
       <Header />
 
-      <div className="flex">
+      <div className="flex overflow-x-hidden">
         <CodeEditor
           icon={logoHtml5}
           type="html"
