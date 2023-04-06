@@ -1,0 +1,46 @@
+:root {
+  --tooltip-bg: #e7ecf1;
+  --tooltip-color: #081c30;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::before {
+  @apply pointer-events-none absolute z-[999] mt-2 w-max rounded-md border-t border-white/10 bg-[var(--tooltip-bg)] px-2 py-1 text-sm font-medium text-[var(--tooltip-color)] opacity-0 shadow-lg duration-200 content-[attr(data-tooltip)];
+}
+
+.tooltip:hover::before {
+  opacity: 1;
+}
+
+.tlt-b.tooltip::before {
+  transform: translate(-50%, 8px);
+  top: 100%;
+  left: 50%;
+}
+
+.tlt-b.tooltip:hover::before {
+  transform: translate(-50%, 0);
+}
+
+.tlt-br.tooltip::before {
+  transform: translate(0, 8px);
+  top: 100%;
+  right: 0 !important;
+}
+
+.tlt-br.tooltip:hover::before {
+  transform: translate(0, 0);
+}
+
+.tlt-bl.tooltip::before {
+  transform: translate(0, 8px);
+  top: 100%;
+  left: 0;
+}
+
+.tlt-bl.tooltip:hover::before {
+  transform: translate(0, 0);
+}
