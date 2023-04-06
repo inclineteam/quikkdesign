@@ -34,3 +34,13 @@
 .tlt-br.tooltip:hover::before {
   transform: translate(0, 0);
 }
+
+.tlt-bl.tooltip::before {
+  transform: translate(0, 8px);
+  top: 100%;
+  left: 0;
+}
+
+.tlt-bl.tooltip:hover::before {
+  transform: translate(0, 0);
+}

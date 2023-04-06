@@ -7,7 +7,7 @@ import { useRef } from "react";
 const ProjectName = () => {
   const inputRef = useRef(null);
   const [edit, setEdit] = useState(false);
-  const { projectName, setProjectName } = useProjectStore((state) => ({
+  const { projectName, updateProjectName } = useProjectStore((state) => ({
     projectName: state.projectName,
     updateProjectName: state.updateProjectName,
   }));
@@ -22,9 +22,9 @@ const ProjectName = () => {
 
   return (
     <div
-      className={`z-50 flex items-center space-x-2 rounded-lg border border-white/[0.05] bg-white/[0.05] py-1 pl-2 pr-1 text-white/80 shadow shadow-black/10 duration-200 ${clsx(
+      className={`z-50 flex items-center space-x-2 rounded-lg border border-white/10 py-1 pl-2 pr-1 text-white/80 shadow shadow-black/10 duration-200 ${clsx(
         {
-          "translate-y-2 shadow-[0_0_8px_10px] shadow-black/10": edit,
+          "translate-y-2 bg-white/[0.05]": edit,
         }
       )}`}
     >

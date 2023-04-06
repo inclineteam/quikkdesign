@@ -8,7 +8,7 @@ import { oneDark } from "../themes/onedark";
 const CodeEditor = ({ lang, value, update, icon, type }) => {
   return (
     <div className="h-max w-full border-b border-l border-white/10 first:border-l-0">
-      <header className="flex items-center justify-between border-y border-white/10 px-2 py-1 text-sm uppercase text-white/60">
+      <header className="flex items-center justify-between border-y border-white/10 bg-[#282c34] px-2 py-1 text-sm uppercase text-white/60">
         <div
           className={`flex items-center space-x-2 ${clsx({
             "text-amber-500": type === "html",
