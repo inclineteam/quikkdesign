@@ -5,15 +5,15 @@ import {
   settingsOutline,
   help,
   logoGithub,
-  save,
-  eye,
   eyeOutline,
-  saveOutline,
   flashOutline,
   buildOutline,
 } from "ionicons/icons";
+import useEditorStore from "../stores/editor-store";
 
 const Header = () => {
+  const previewRef = useEditorStore((state) => state.previewRef);
+
   return (
     <header className="mx-auto mb-6 flex items-center justify-between space-x-10 px-4 py-2 text-white duration-200">
       <div className="flex items-center space-x-4">
@@ -34,6 +34,9 @@ const Header = () => {
           </button>
 
           <button
+            onClick={() =>
+              previewRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
             data-tooltip="Preview"
             className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-lg px-2 py-1 text-white/90 duration-100 hover:bg-white/[0.05]"
           >
