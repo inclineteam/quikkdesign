@@ -31,7 +31,12 @@ const ProjectName = () => {
       <input
         value={projectName}
         onChange={(e) => updateProjectName(e.target.value)}
-        className={`w-max bg-transparent font-['Spline_Sans_Mono'] text-sm outline-none`}
+        className={`w-max bg-transparent font-spline text-sm outline-none duration-200 ${clsx(
+          {
+            "text-white": edit,
+            "text-white/70": !edit,
+          }
+        )}`}
         onKeyDown={handleNewProjectName}
         ref={inputRef}
         onFocus={() => setEdit(true)}
@@ -42,7 +47,7 @@ const ProjectName = () => {
         <button
           data-tooltip="Done"
           onClick={() => setEdit(false)}
-          className="tooltip tlt-b rounded-lg p-1 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-300"
+          className="tooltip tlt-b rounded-lg p-1 text-sky-300 hover:bg-sky-500/20 hover:text-sky-300"
         >
           <Check className="h-4 w-4" />
         </button>
