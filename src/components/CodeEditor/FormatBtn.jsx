@@ -2,11 +2,11 @@ import prettier from "prettier/standalone";
 import htmlParser from "prettier/parser-html";
 import cssParser from "prettier/parser-postcss";
 import jsParser from "prettier/parser-babel";
-import { useCodeEditorStore } from ".";
 import { Sparkles } from "akar-icons";
+import { useCodeEditorContext } from "./Context.editor";
 
 const FormatBtn = () => {
-  const isMinimized = useCodeEditorStore((state) => state.isMinimized);
+  const { isMinimized } = useCodeEditorContext();
 
   // uses prettier standalone to format code
   const formatCode = () => {
