@@ -1,6 +1,6 @@
+import { EditorView } from "@codemirror/view";
 import { IonIcon } from "@ionic/react";
 import ReactCodeMirror from "@uiw/react-codemirror";
-import { Sparkles } from "akar-icons";
 import { Reduce } from "akar-icons";
 import clsx from "clsx";
 import { useState } from "react";
@@ -63,7 +63,7 @@ const CodeEditor = ({ lang, value, update, icon, type }) => {
 
       <ReactCodeMirror
         height="80vh"
-        extensions={[lang()]}
+        extensions={[lang(), EditorView.lineWrapping]}
         value={value}
         onChange={(val) => update(val)}
         className={

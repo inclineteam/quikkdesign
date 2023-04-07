@@ -1,5 +1,5 @@
 import { createRef } from "react";
-import { create, createStore } from "zustand";
+import { createStore } from "zustand";
 
 const editorStore = createStore((set, get) => ({
   html: "",
