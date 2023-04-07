@@ -9,7 +9,7 @@ import {
   flashOutline,
   buildOutline,
 } from "ionicons/icons";
-import { useEditorStore } from "../contexts/EditorContext";
+import { useEditorStore } from "@/contexts/EditorContext";
 import Logo from "./Logo";
 
 const Header = () => {

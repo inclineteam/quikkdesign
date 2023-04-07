@@ -1,13 +1,11 @@
 import { Reduce } from "akar-icons";
 import { Enlarge } from "akar-icons";
-import { useCodeEditorStore } from ".";
-import { useEditorStore } from "../../contexts/EditorContext";
+import { useEditorStore } from "@/contexts/EditorContext";
+import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 
 const ToggleBtn = ({ type }) => {
   const { minimizedEditors, updateMinimizedEditors } = useEditorStore();
-
-  const isMinimized = useCodeEditorStore((state) => state.isMinimized);
-  const setIsMinimized = useCodeEditorStore((state) => state.setIsMinimized);
+  const { isMinimized, setIsMinimized } = useCodeEditorContext();
 
   // handles the minimize and expand func of the editor
   // there can only be 2 minimized editors
