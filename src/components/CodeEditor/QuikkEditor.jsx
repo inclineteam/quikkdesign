@@ -8,8 +8,8 @@ import {
   expandAbbreviation,
 } from "@emmetio/codemirror6-plugin";
 import { keymap } from "@codemirror/view";
-import CodeEditorHeader from "./Header.editor";
-import { useCodeEditorContext } from "./Context.editor";
+import CodeEditorHeader from "./CodeEditorHeader";
+import { useCodeEditorContext } from "./CodeEditorContext";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();

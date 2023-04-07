@@ -3,7 +3,7 @@ import htmlParser from "prettier/parser-html";
 import cssParser from "prettier/parser-postcss";
 import jsParser from "prettier/parser-babel";
 import { Sparkles } from "akar-icons";
-import { useCodeEditorContext } from "./Context.editor";
+import { useCodeEditorContext } from "./CodeEditorContext";
 
 const FormatBtn = () => {
   const { isMinimized } = useCodeEditorContext();
