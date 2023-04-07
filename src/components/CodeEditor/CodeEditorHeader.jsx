@@ -1,10 +1,8 @@
 import { IonIcon } from "@ionic/react";
 import clsx from "clsx";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
-import FormatBtn from "./FormatBtn";
-import ToggleBtn from "./ToggleBtn";
 
-const CodeEditorHeader = ({ icon, type }) => {
+const CodeEditorHeader = ({ children, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();
 
   return (
@@ -20,10 +18,7 @@ const CodeEditorHeader = ({ icon, type }) => {
         {!isMinimized && <p className="font-semibold">{type}</p>}
       </div>
 
-      <div className="flex items-center">
-        <FormatBtn />
-        <ToggleBtn type={type} />
-      </div>
+      <div className="flex items-center">{children}</div>
     </header>
   );
 };
