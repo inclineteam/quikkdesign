@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Pencil, Check } from "akar-icons";
 import clsx from "clsx";
 import { useRef } from "react";
-import { useProjectStore } from "../contexts/ProjectContext";
+import { useProjectStore } from "@/contexts/ProjectContext";
 
 const ProjectName = () => {
   const inputRef = useRef(null);

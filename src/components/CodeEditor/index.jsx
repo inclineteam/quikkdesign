@@ -1,4 +1,4 @@
-import CodeEditorContextProvider from "./CodeEditorContext";
+import CodeEditorContextProvider from "@/contexts/CodeEditorContext";
 import QuikkEditor from "./QuikkEditor";
 
 const CodeEditor = ({ lang, value, update, icon, type }) => {

@@ -1,6 +1,4 @@
-import { useContext } from "react";
-import { createContext } from "react";
-import { useState } from "react";
+import { useContext, createContext, useState } from "react";
 
 const CodeEditorContext = createContext();
 

@@ -9,7 +9,7 @@ import {
 } from "@emmetio/codemirror6-plugin";
 import { keymap } from "@codemirror/view";
 import CodeEditorHeader from "./CodeEditorHeader";
-import { useCodeEditorContext } from "./CodeEditorContext";
+import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();

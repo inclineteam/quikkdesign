@@ -1,6 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import clsx from "clsx";
-import { useCodeEditorContext } from "./CodeEditorContext";
+import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 import FormatBtn from "./FormatBtn";
 import ToggleBtn from "./ToggleBtn";
 

@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useStore } from "zustand";
-import editorStore from "../stores/editor-store";
+import editorStore from "@/stores/editor-store";
 
 const EditorContext = createContext();
 

@@ -1,7 +1,7 @@
 import { Reduce } from "akar-icons";
 import { Enlarge } from "akar-icons";
-import { useEditorStore } from "../../contexts/EditorContext";
-import { useCodeEditorContext } from "./CodeEditorContext";
+import { useEditorStore } from "@/contexts/EditorContext";
+import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 
 const ToggleBtn = ({ type }) => {
   const { minimizedEditors, updateMinimizedEditors } = useEditorStore();
