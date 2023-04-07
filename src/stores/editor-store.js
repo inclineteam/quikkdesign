@@ -1,7 +1,7 @@
 import { createRef } from "react";
-import { create } from "zustand";
+import { create, createStore } from "zustand";
 
-const useEditorStore = create((set, get) => ({
+const editorStore = createStore((set, get) => ({
   html: "",
   css: "",
   js: "",
@@ -22,4 +22,4 @@ const useEditorStore = create((set, get) => ({
     }),
 }));
 
-export default useEditorStore;
+export default editorStore;

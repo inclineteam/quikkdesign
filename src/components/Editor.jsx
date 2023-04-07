@@ -2,29 +2,12 @@ import CodeEditor from "./CodeEditor";
 import { html as htmlExt } from "@codemirror/lang-html";
 import { css as cssExt } from "@codemirror/lang-css";
 import { javascript as javascriptExt } from "@codemirror/lang-javascript";
-import useEditorStore from "../stores/editor-store";
 import Header from "./Header";
-import {
-  buildOutline,
-  eyeOutline,
-  flashOutline,
-  logoCss3,
-  logoHtml5,
-  logoJavascript,
-} from "ionicons/icons";
-import { IonIcon } from "@ionic/react";
+import { logoCss3, logoHtml5, logoJavascript } from "ionicons/icons";
+import { useEditorStore } from "../contexts/EditorContext";
 
 const Editor = () => {
-  const { html, css, js, updateHtml, updateCss, updateJs } = useEditorStore(
-    (state) => ({
-      html: state.html,
-      css: state.css,
-      js: state.js,
-      updateHtml: state.updateHtml,
-      updateCss: state.updateCss,
-      updateJs: state.updateJs,
-    })
-  );
+  const editorState = useEditorStore();
 
   return (
     <div className="h-screen bg-[#282c34]">
@@ -34,22 +17,22 @@ const Editor = () => {
         <CodeEditor
           icon={logoHtml5}
           type="html"
-          value={html}
-          update={updateHtml}
+          value={editorState.html}
+          update={editorState.updateHtml}
           lang={htmlExt}
         />
         <CodeEditor
           icon={logoCss3}
           type="css"
-          value={css}
-          update={updateCss}
+          value={editorState.css}
+          update={editorState.updateCss}
           lang={cssExt}
         />
         <CodeEditor
           icon={logoJavascript}
           type="js"
-          value={js}
-          update={updateJs}
+          value={editorState.js}
+          update={editorState.updateJs}
           lang={javascriptExt}
         />
       </div>

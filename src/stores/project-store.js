@@ -1,8 +1,8 @@
-import { create } from "zustand";
+import { createStore } from "zustand";
 
-const useProjectStore = create((set) => ({
+const projectStore = createStore((set) => ({
   projectName: "Untitled Project",
   updateProjectName: (val) => set({ projectName: val }),
 }));
 
-export default useProjectStore;
+export default projectStore;

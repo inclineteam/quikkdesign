@@ -4,17 +4,12 @@ import { Sparkles } from "akar-icons";
 import { Reduce } from "akar-icons";
 import clsx from "clsx";
 import { useState } from "react";
-import useEditorStore from "../stores/editor-store";
+import { useEditorStore } from "../contexts/EditorContext";
 import { oneDark } from "../themes/onedark";
 
 const CodeEditor = ({ lang, value, update, icon, type }) => {
   const [isMinimized, setIsMinimized] = useState(false);
-  const { minimizedEditors, updateMinimizedEditors } = useEditorStore(
-    (state) => ({
-      minimizedEditors: state.minimizedEditors,
-      updateMinimizedEditors: state.updateMinimizedEditors,
-    })
-  );
+  const { minimizedEditors, updateMinimizedEditors } = useEditorStore();
 
   const toggleEditor = () => {
     if (!isMinimized && minimizedEditors !== 2) {
@@ -33,7 +28,7 @@ const CodeEditor = ({ lang, value, update, icon, type }) => {
   return (
     <div
       className={
-        "h-max w-full border-b border-l border-white/10 duration-200 first:border-l-0 " +
+        "h-max border-b border-l border-white/10 duration-200 first:border-l-0 " +
         clsx({
           "w-[80px]": isMinimized,
           "w-full": !isMinimized,

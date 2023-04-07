@@ -9,20 +9,16 @@ import {
   flashOutline,
   buildOutline,
 } from "ionicons/icons";
-import useEditorStore from "../stores/editor-store";
+import { useEditorStore } from "../contexts/EditorContext";
+import Logo from "./Logo";
 
 const Header = () => {
-  const previewRef = useEditorStore((state) => state.previewRef);
+  const { previewRef, updateSourceDoc } = useEditorStore();
 
   return (
     <header className="mx-auto mb-6 flex items-center justify-between space-x-10 px-4 py-2 text-white duration-200">
       <div className="flex items-center space-x-4">
-        <div className="text-center font-spline text-lg font-semibold text-white">
-          Quikk
-          <span className="bg-gradient-to-r from-violet-400 to-purple-300 bg-clip-text text-transparent">
-            Design
-          </span>
-        </div>
+        <Logo />
 
         <div className="flex space-x-2 rounded-md border border-white/10 p-1">
           <button
@@ -74,12 +70,15 @@ const Header = () => {
         >
           <IonIcon className="text-xl" icon={help} />
         </button>
-        <button
+        <a
+          href="https://github.com/inclineteam/quikkdesign"
+          target="_blank"
+          rel="noreferrer noopener"
           data-tooltip="Support"
           className="tooltip tlt-br flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
         >
           <IonIcon className="text-xl" icon={logoGithub} />
-        </button>
+        </a>
       </div>
     </header>
   );
