@@ -12,6 +12,13 @@ import {
   expandAbbreviation,
 } from "@emmetio/codemirror6-plugin";
 import { keymap } from "@codemirror/view";
+import { Enlarge } from "akar-icons";
+import prettier from "prettier/standalone";
+import htmlParser from "prettier/parser-html";
+import cssParser from "prettier/parser-postcss";
+import jsParser from "prettier/parser-babel";
+import { colorWandOutline, sparkles, sparklesOutline } from "ionicons/icons";
+import { Sparkles } from "akar-icons";
 
 const CodeEditor = ({ lang, value, update, icon, type }) => {
   const [isMinimized, setIsMinimized] = useState(false);
@@ -51,6 +58,35 @@ const CodeEditor = ({ lang, value, update, icon, type }) => {
     return defaultExt;
   };
 
+  // uses prettier standalone to format code
+  const formatCode = () => {
+    switch (type) {
+      case "html":
+        const formattedHtml = prettier.format(value, {
+          parser: "html",
+          plugins: [htmlParser],
+        });
+        update(formattedHtml);
+        break;
+
+      case "css":
+        const formattedCss = prettier.format(value, {
+          parser: "css",
+          plugins: [cssParser],
+        });
+        update(formattedCss);
+        break;
+
+      case "js":
+        const formattedJs = prettier.format(value, {
+          parser: "babel",
+          plugins: [jsParser],
+        });
+        update(formattedJs);
+        break;
+    }
+  };
+
   return (
     <div
       className={
@@ -73,17 +109,30 @@ const CodeEditor = ({ lang, value, update, icon, type }) => {
           {!isMinimized && <p className="font-semibold">{type}</p>}
         </div>
 
-        <div className="ml-2 flex pl-2">
-          <button
-            onClick={toggleEditor}
-            data-tooltip="Minimize"
-            className={`tooltip ${clsx({
-              "tlt-b": type !== "js",
-              "tlt-br": type === "js",
-            })} group flex items-center rounded-lg p-1 duration-200 hover:bg-cyan-500/10`}
-          >
-            <Reduce className="group-hover:text-cyan-400" size={16} />
-          </button>
+        <div className="flex items-center">
+          {!isMinimized && (
+            <div className="ml-2 pl-2">
+              <button
+                data-tooltip="Format"
+                className="tooltip tlt-b group flex items-center rounded-lg p-1 hover:bg-yellow-500/10 hover:text-yellow-400"
+                onClick={formatCode}
+              >
+                <Sparkles size={16} />
+              </button>
+            </div>
+          )}
+
+          <div className="ml-2 flex border-l border-white/10 pl-2">
+            <button
+              data-tooltip={isMinimized ? "Expand" : "Minimize"}
+              className={`tooltip ${
+                type === "js" ? "tlt-br" : "tlt-b"
+              } group flex items-center rounded-lg p-1 duration-200 hover:bg-cyan-500/10 hover:text-cyan-400`}
+              onClick={toggleEditor}
+            >
+              {isMinimized ? <Enlarge size={16} /> : <Reduce size={16} />}
+            </button>
+          </div>
         </div>
       </header>
 
