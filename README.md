@@ -18,16 +18,18 @@ Quikkdesign is a simple HTML, CSS, and JS code editor built with React, Tailwind
 
 1.  Clone the repository:
     bashCopy code
-    ``` git clone https://github.com/username/quikkdesign.git``` 
+    ```git clone https://github.com/username/quikkdesign.git``` 
     
 2.  Install dependencies:
     bashCopy code
-    ```cd quikkdesign
-    npm install``` 
+    ```
+    cd quikkdesign
+    npm install
+    ``` 
     
 3.  Start the development server:
     bashCopy code
-    ```npm start```
+    ```npm run dev```
 
 
 ### Option 2: Use GitHub Desktop
@@ -39,8 +41,7 @@ Quikkdesign is a simple HTML, CSS, and JS code editor built with React, Tailwind
 5.  Click "Clone."
 6.  Open the local repository in a terminal or command prompt.
 7.  Install dependencies:
-    bashCopy code
-    ```npm install``` 
+    ```npm install```
     
 8.  Start the development server:
     bashCopy code
