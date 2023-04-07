@@ -22,6 +22,7 @@ const Header = () => {
 
         <div className="flex space-x-2 rounded-md border border-white/10 p-1">
           <button
+            onClick={updateSourceDoc}
             data-tooltip="Save"
             className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-lg px-2 py-1 text-white/90 duration-100 hover:bg-white/[0.05]"
           >
@@ -41,6 +42,10 @@ const Header = () => {
           </button>
 
           <button
+            onClick={() => {
+              updateSourceDoc();
+              previewRef.current?.scrollIntoView({ behavior: "smooth" });
+            }}
             data-tooltip="Save and Preview (Ctrl + s)"
             className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-lg px-2 py-1 text-white/90 duration-100 hover:bg-white/[0.05]"
           >
