@@ -1,21 +1,24 @@
+import { EditorView } from "@codemirror/view";
 import { IonIcon } from "@ionic/react";
 import ReactCodeMirror from "@uiw/react-codemirror";
-import { Sparkles } from "akar-icons";
 import { Reduce } from "akar-icons";
 import clsx from "clsx";
 import { useState } from "react";
-import useEditorStore from "../stores/editor-store";
+import { useEditorStore } from "../contexts/EditorContext";
 import { oneDark } from "../themes/onedark";
+import { colorPicker } from "@replit/codemirror-css-color-picker";
+import {
+  abbreviationTracker,
+  expandAbbreviation,
+} from "@emmetio/codemirror6-plugin";
+import { keymap } from "@codemirror/view";
 
 const CodeEditor = ({ lang, value, update, icon, type }) => {
   const [isMinimized, setIsMinimized] = useState(false);
-  const { minimizedEditors, updateMinimizedEditors } = useEditorStore(
-    (state) => ({
-      minimizedEditors: state.minimizedEditors,
-      updateMinimizedEditors: state.updateMinimizedEditors,
-    })
-  );
+  const { minimizedEditors, updateMinimizedEditors } = useEditorStore();
 
+  // handles the minimize and expand func of the editor
+  // there can only be 2 minimized editors
   const toggleEditor = () => {
     if (!isMinimized && minimizedEditors !== 2) {
       setIsMinimized(true);
@@ -28,12 +31,30 @@ const CodeEditor = ({ lang, value, update, icon, type }) => {
     }
   };
 
-  console.log(minimizedEditors);
+  // returns the needed extension for each editor
+  const exts = () => {
+    const defaultExt = [lang(), EditorView.lineWrapping, colorPicker];
+
+    if (type === "html") {
+      return [
+        ...defaultExt,
+        abbreviationTracker(),
+        keymap.of([
+          {
+            key: "Ctrl-e",
+            run: expandAbbreviation,
+          },
+        ]),
+      ];
+    }
+
+    return defaultExt;
+  };
 
   return (
     <div
       className={
-        "h-max w-full border-b border-l border-white/10 duration-200 first:border-l-0 " +
+        "h-max border-b border-l border-white/10 duration-200 first:border-l-0 " +
         clsx({
           "w-[80px]": isMinimized,
           "w-full": !isMinimized,
@@ -68,7 +89,7 @@ const CodeEditor = ({ lang, value, update, icon, type }) => {
 
       <ReactCodeMirror
         height="80vh"
-        extensions={[lang()]}
+        extensions={exts()}
         value={value}
         onChange={(val) => update(val)}
         className={

@@ -62,7 +62,11 @@ export const oneDarkTheme = EditorView.theme(
       textDecoration: `underline 1px #80bdff`,
     },
 
-    ".cm-cursor, .cm-dropCursor": { borderLeftColor: cursor },
+    ".cm-cursor": {
+      transitionDuration: "100ms",
+    },
+
+    ".cm-cursor, .cm-dropCursor": { borderLeft: `2px solid ${cursor}` },
     "&.cm-focused .cm-selectionBackground, .cm-selectionBackground, .cm-content ::selection":
       { backgroundColor: selection },
 

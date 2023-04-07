@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./public/test-banner.png">
-  <img alt="Incline banner light mode" src="./public/banner.png" />
+  <source media="(prefers-color-scheme: dark)" srcset="./public/banner-dark.png">
+  <img alt="Incline banner light mode" src="./public/banner-light.png" />
 </picture>
 
 # QuikkDesign

@@ -1,16 +1,13 @@
 import { useState } from "react";
 import { Pencil, Check } from "akar-icons";
-import useProjectStore from "../stores/project-store";
 import clsx from "clsx";
 import { useRef } from "react";
+import { useProjectStore } from "../contexts/ProjectContext";
 
 const ProjectName = () => {
   const inputRef = useRef(null);
   const [edit, setEdit] = useState(false);
-  const { projectName, updateProjectName } = useProjectStore((state) => ({
-    projectName: state.projectName,
-    updateProjectName: state.updateProjectName,
-  }));
+  const { projectName, updateProjectName } = useProjectStore();
 
   const handleNewProjectName = (e) => {
     if (e.key === "Enter") {
