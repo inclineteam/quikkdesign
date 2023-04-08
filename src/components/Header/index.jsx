@@ -1,8 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import ProjectName from "./ProjectName";
 import {
-  downloadOutline,
-  settingsOutline,
   help,
   logoGithub,
   eyeOutline,
@@ -10,49 +8,12 @@ import {
   buildOutline,
 } from "ionicons/icons";
 import { useEditorStore } from "@/contexts/EditorContext";
-import { useProjectStore } from "@/contexts/ProjectContext";
-import { saveAs } from "file-saver";
-import Logo from "./Logo";
-import JSZip from "jszip";
+import Logo from "../Logo";
+import SaveToDeviceBtn from "./SaveToDeviceBtn";
+import PreferencesBtn from "./PreferencesBtn";
 
 const Header = () => {
-  const { html, css, js, previewRef, updateSourceDoc } = useEditorStore();
-  const { projectName } = useProjectStore();
-
-  const saveProjectToDevice = () => {
-    const htmlTemplate = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>${projectName}</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  ${html}
-<script src="script.js"></script>
-</body>
-</html>
-    `;
-
-    const htmlFile = new File([htmlTemplate], { type: "text/html" });
-    const cssFile = new File([css], { type: "text/css" });
-    const jsFile = new File([js], { type: "text/javascript" });
-
-    const zip = new JSZip();
-
-    const projectFolder = zip.folder(`${projectName}`);
-
-    projectFolder.file("index.html", htmlFile);
-    projectFolder.file("style.css", cssFile);
-    projectFolder.file("script.js", jsFile);
-
-    zip.generateAsync({ type: "blob" }).then((content) => {
-      saveAs(content, `${projectName}`);
-    });
-  };
+  const { previewRef, updateSourceDoc } = useEditorStore();
 
   return (
     <header className="mx-auto mb-6 flex items-center justify-between space-x-10 px-4 py-2 text-white duration-200">
@@ -96,19 +57,8 @@ const Header = () => {
 
       <div className="flex items-center space-x-2">
         <ProjectName />
-        <button
-          onClick={saveProjectToDevice}
-          data-tooltip="Save to your device"
-          className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
-        >
-          <IonIcon className="text-xl" icon={downloadOutline} />
-        </button>
-        <button
-          data-tooltip="Preferences"
-          className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
-        >
-          <IonIcon className="text-xl" icon={settingsOutline} />
-        </button>
+        <SaveToDeviceBtn />
+        <PreferencesBtn />
         <button
           data-tooltip="Help"
           className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"

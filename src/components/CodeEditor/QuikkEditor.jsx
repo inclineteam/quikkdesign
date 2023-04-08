@@ -48,7 +48,7 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
     >
       <CodeEditorHeader type={type} icon={icon}>
         <FormatBtn type={type} value={value} update={update} />
-        <ToggleBtn type={value} />
+        <ToggleBtn type={type} />
       </CodeEditorHeader>
 
       <ReactCodeMirror
