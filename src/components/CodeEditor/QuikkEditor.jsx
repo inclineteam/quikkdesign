@@ -10,6 +10,8 @@ import {
 import { keymap } from "@codemirror/view";
 import CodeEditorHeader from "./CodeEditorHeader";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
+import FormatBtn from "./FormatBtn";
+import ToggleBtn from "./ToggleBtn";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();
@@ -44,7 +46,11 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
         })
       }
     >
-      <CodeEditorHeader type={type} icon={icon} />
+      <CodeEditorHeader type={type} icon={icon}>
+        <FormatBtn type={type} value={value} update={update} />
+        <ToggleBtn type={type} />
+      </CodeEditorHeader>
+
       <ReactCodeMirror
         height="80vh"
         extensions={exts()}

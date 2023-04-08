@@ -1,8 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import ProjectName from "./ProjectName";
 import {
-  downloadOutline,
-  settingsOutline,
   help,
   logoGithub,
   eyeOutline,
@@ -10,7 +8,9 @@ import {
   buildOutline,
 } from "ionicons/icons";
 import { useEditorStore } from "@/contexts/EditorContext";
-import Logo from "./Logo";
+import Logo from "../Logo";
+import SaveToDeviceBtn from "./SaveToDeviceBtn";
+import PreferencesBtn from "./PreferencesBtn";
 
 const Header = () => {
   const { previewRef, updateSourceDoc } = useEditorStore();
@@ -57,18 +57,8 @@ const Header = () => {
 
       <div className="flex items-center space-x-2">
         <ProjectName />
-        <button
-          data-tooltip="Save to your device"
-          className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
-        >
-          <IonIcon className="text-xl" icon={downloadOutline} />
-        </button>
-        <button
-          data-tooltip="Preferences"
-          className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
-        >
-          <IonIcon className="text-xl" icon={settingsOutline} />
-        </button>
+        <SaveToDeviceBtn />
+        <PreferencesBtn />
         <button
           data-tooltip="Help"
           className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"

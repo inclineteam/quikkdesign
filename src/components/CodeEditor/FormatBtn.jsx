@@ -5,7 +5,7 @@ import jsParser from "prettier/parser-babel";
 import { Sparkles } from "akar-icons";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 
-const FormatBtn = () => {
+const FormatBtn = ({ type, value, update }) => {
   const { isMinimized } = useCodeEditorContext();
 
   // uses prettier standalone to format code
