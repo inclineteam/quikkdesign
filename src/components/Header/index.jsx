@@ -10,7 +10,7 @@ import {
 import { useEditorStore } from "@/contexts/EditorContext";
 import Logo from "../Logo";
 import SaveToDeviceBtn from "./SaveToDeviceBtn";
-import PreferencesBtn from "./PreferencesBtn";
+import PreferencesBtn from "./Preferences/PreferencesBtn";
 
 const Header = () => {
   const { previewRef, updateSourceDoc } = useEditorStore();
