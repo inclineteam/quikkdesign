@@ -1,6 +1,6 @@
 import { IonIcon } from "@ionic/react";
 import { motion } from "framer-motion";
-import { colorPalette, colorWand } from "ionicons/icons";
+import { bonfire, colorPalette, colorWand } from "ionicons/icons";
 
 const PreferencesMenu = () => {
   return (
@@ -16,7 +16,7 @@ const PreferencesMenu = () => {
           <span>Superpowers</span>
         </header>
         <div className="flex justify-between space-x-8">
-          <p>Use JQuery</p>
+          <p>JQuery</p>
 
           <div className="flex">
             <label className="relative inline-flex cursor-pointer items-center">
@@ -27,7 +27,7 @@ const PreferencesMenu = () => {
         </div>
 
         <div className="flex justify-between space-x-8">
-          <p>Use SCSS</p>
+          <p>Tailwind CSS</p>
 
           <div className="flex">
             <label className="relative inline-flex cursor-pointer items-center">
@@ -38,7 +38,35 @@ const PreferencesMenu = () => {
         </div>
 
         <div className="flex justify-between space-x-8">
-          <p>Use Tailwind CSS</p>
+          <p>Bootstrap</p>
+
+          <div className="flex">
+            <label className="relative inline-flex cursor-pointer items-center">
+              <input type="checkbox" className="peer sr-only" readOnly />
+              <div className="peer h-5 w-10 rounded-full border-t border-gray-500 bg-gray-600 shadow duration-150 after:absolute after:left-[4px] after:top-0.5 after:h-4 after:w-4 after:rounded-full after:bg-gray-800 after:transition-all after:content-[''] peer-checked:border-indigo-300 peer-checked:bg-indigo-400 peer-checked:after:translate-x-full peer-checked:after:bg-indigo-900"></div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div className="space-y-2 rounded-md bg-black/10 p-3 text-gray-100">
+        <header className="mb-3 flex items-center space-x-2 text-slate-400">
+          <IonIcon icon={bonfire} className="text-base" />
+          <span>Icons</span>
+        </header>
+        <div className="flex justify-between space-x-8">
+          <p>Ionicons</p>
+
+          <div className="flex">
+            <label className="relative inline-flex cursor-pointer items-center">
+              <input type="checkbox" className="peer sr-only" readOnly />
+              <div className="peer h-5 w-10 rounded-full border-t border-gray-500 bg-gray-600 shadow duration-150 after:absolute after:left-[4px] after:top-0.5 after:h-4 after:w-4 after:rounded-full after:bg-gray-800 after:transition-all after:content-[''] peer-checked:border-indigo-300 peer-checked:bg-indigo-400 peer-checked:after:translate-x-full peer-checked:after:bg-indigo-900"></div>
+            </label>
+          </div>
+        </div>
+
+        <div className="flex justify-between space-x-8">
+          <p>Bootstrap Icons</p>
 
           <div className="flex">
             <label className="relative inline-flex cursor-pointer items-center">

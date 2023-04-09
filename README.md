@@ -4,9 +4,11 @@
 </picture>
 
 # QuikkDesign
+
 Quikkdesign is a simple HTML, CSS, and JS code editor built with React, Tailwind, Zustand, and Codemirror. It provides a convenient interface for editing and previewing code in real-time. Whether you are building a website, developing a new feature, or simply playing around with code, Quikkdesign makes it easy to create and modify web pages or components.
 
 ## Installation
+
 ### Option 1: Clone the repository
 
 # Quikkdesign
@@ -14,55 +16,51 @@ Quikkdesign is a simple HTML, CSS, and JS code editor built with React, Tailwind
 Quikkdesign is a simple HTML, CSS, and JS code editor built with React, Tailwind, Zustand, and Codemirror. It provides a convenient interface for editing and previewing code in real-time. Whether you are building a website, developing a new feature, or simply playing around with code, Quikkdesign makes it easy to create and modify web pages or components.
 
 ## Installation
+
 ### Option 1: Clone the repository
 
 1.  Clone the repository:
     bashCopy code
-    ```git clone https://github.com/username/quikkdesign.git``` 
-    
+    `git clone https://github.com/username/quikkdesign.git`
 2.  Install dependencies:
     bashCopy code
     ```
     cd quikkdesign
     npm install
-    ``` 
-    
+    ```
 3.  Start the development server:
     bashCopy code
-    ```npm run dev```
-
+    `npm run dev`
 
 ### Option 2: Use GitHub Desktop
 
 1.  Install GitHub Desktop from the [GitHub Desktop website](https://desktop.github.com/).
-2.  In GitHub Desktop, click the "Clone a repository" button and select "Clone with URL."  
+2.  In GitHub Desktop, click the "Clone a repository" button and select "Clone with URL."
 3.  Enter the repository URL: [https://github.com/username/quikkdesign.git](https://github.com/username/quikkdesign.git)
 4.  Choose a local path to clone the repository.
 5.  Click "Clone."
 6.  Open the local repository in a terminal or command prompt.
 7.  Install dependencies:
-    ```npm install```
-    
+    `npm install`
 8.  Start the development server:
     bashCopy code
-    ```npm run dev``` 
-    
+    `npm run dev`
 9.  Open the app in your browser at [http://localhost:3000](http://localhost:3000/).
-`
+
 ## Usage
 
 Quikkdesign provides a simple interface for editing HTML, CSS, and JS code. You can use the editor to create and modify web pages or components.
 
 ### Supported Features
 
--   **Syntax highlighting** for HTML, CSS, and JS makes it easy to identify different parts of your code.
--   **Auto-indentation** helps keep your code organized and easy to read.
--   **Code autocompletion** saves time and reduces errors by suggesting possible code completions as you type.
--   **Live preview** lets you see your changes in real-time, without having to switch back and forth between the editor and the browser.
--   **Dark mode** is easy on the eyes and reduces eye strain.
--   **Save and load code snippets** allows you to easily save and load code snippets for later use.
--   **Fullscreen mode** provides a distraction-free editing experience.
--   **Keyboard shortcuts** allow you to work more efficiently.
+- **Syntax highlighting** for HTML, CSS, and JS makes it easy to identify different parts of your code.
+- **Auto-indentation** helps keep your code organized and easy to read.
+- **Code autocompletion** saves time and reduces errors by suggesting possible code completions as you type.
+- **Live preview** lets you see your changes in real-time, without having to switch back and forth between the editor and the browser.
+- **Dark mode** is easy on the eyes and reduces eye strain.
+- **Save and load code snippets** allows you to easily save and load code snippets for later use.
+- **Fullscreen mode** provides a distraction-free editing experience.
+- **Keyboard shortcuts** allow you to work more efficiently.
 
 ## Technologies Used
 
