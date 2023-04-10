@@ -1,7 +1,7 @@
-import { useEditorStore } from "@/contexts/EditorContext";
+import { usePreferencesStore } from "@/contexts/PreferencesContext";
 
 const TailwindOption = () => {
-  const { tailwindPlugin, useTailwindPlugin } = useEditorStore();
+  const { tailwindPlugin, useTailwindPlugin } = usePreferencesStore();
 
   return (
     <div className="flex justify-between space-x-8">

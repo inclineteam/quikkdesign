@@ -1,7 +1,7 @@
-import { useEditorStore } from "@/contexts/EditorContext";
+import { usePreviewStore } from "@/contexts/PreviewContext";
 
 const Preview = () => {
-  const { sourceDoc, previewRef } = useEditorStore();
+  const { sourceDoc, previewRef } = usePreviewStore();
 
   return (
     <div>

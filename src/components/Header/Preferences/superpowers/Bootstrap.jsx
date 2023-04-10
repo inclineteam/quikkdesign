@@ -1,7 +1,7 @@
-import { useEditorStore } from "@/contexts/EditorContext";
+import { usePreferencesStore } from "@/contexts/PreferencesContext";
 
 const BootstrapOption = () => {
-  const { bootstrapPlugin, useBootstrapPlugin } = useEditorStore();
+  const { bootstrapPlugin, useBootstrapPlugin } = usePreferencesStore();
 
   return (
     <div className="flex justify-between space-x-8">

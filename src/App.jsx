@@ -1,9 +1,9 @@
-import Editor from "./components/Editor";
-import Preview from "./components/Preview";
-import { useEditorStore } from "./contexts/EditorContext";
+import Editor from "@/components/Editor";
+import Preview from "@/components/Preview";
+import { usePreviewStore } from "@/contexts/PreviewContext";
 
 export default function App() {
-  const { previewRef, updateSourceDoc } = useEditorStore();
+  const { previewRef, updateSourceDoc } = usePreviewStore();
 
   const handleRunKeybind = (e) => {
     const charCode = String.fromCharCode(e.which).toLowerCase();
