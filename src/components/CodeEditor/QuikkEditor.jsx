@@ -1,4 +1,5 @@
 import { EditorView } from "@codemirror/view";
+import { indentUnit } from "@codemirror/language";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import clsx from "clsx";
 import { oneDark } from "../../themes/onedark";
@@ -12,13 +13,20 @@ import CodeEditorHeader from "./CodeEditorHeader";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 import FormatBtn from "./FormatBtn";
 import ToggleBtn from "./ToggleBtn";
+import { usePreferencesStore } from "@/contexts/PreferencesContext";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();
+  const { tabSize, fontSize } = usePreferencesStore();
 
   // returns the needed extension for each editor
   const exts = () => {
-    const defaultExt = [lang(), EditorView.lineWrapping, colorPicker];
+    const defaultExt = [
+      lang(),
+      EditorView.lineWrapping,
+      colorPicker,
+      indentUnit.of(" ".repeat(tabSize === 0 || tabSize === "" ? 2 : tabSize)),
+    ];
 
     if (type === "html") {
       return [
@@ -56,8 +64,11 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
         extensions={exts()}
         value={value}
         onChange={(val) => update(val)}
+        style={{
+          fontSize: fontSize + "px",
+        }}
         className={
-          "w-full text-sm duration-150 [&>.cm-focused]:outline-none " +
+          "w-full duration-150 [&>.cm-focused]:outline-none " +
           clsx({
             "opacity-0": isMinimized,
           })

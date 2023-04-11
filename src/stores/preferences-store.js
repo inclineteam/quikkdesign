@@ -1,6 +1,8 @@
 import { createStore } from "zustand";
 
 const preferencesStore = createStore((set, get) => ({
+  fontSize: 14,
+  tabSize: 2,
   jQueryPlugin: false,
   tailwindPlugin: false,
   bootstrapPlugin: false,
@@ -11,6 +13,8 @@ const preferencesStore = createStore((set, get) => ({
   useJQueryPlugin: () => set({ jQueryPlugin: !get().jQueryPlugin }),
   useTailwindPlugin: () => set({ tailwindPlugin: !get().tailwindPlugin }),
   useBootstrapPlugin: () => set({ bootstrapPlugin: !get().bootstrapPlugin }),
+  updateFontSize: (val) => set({ fontSize: val }),
+  updateTabSize: (val) => set({ tabSize: val }),
 }));
 
 export default preferencesStore;

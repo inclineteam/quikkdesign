@@ -1,6 +1,8 @@
 import { IonIcon } from "@ionic/react";
 import { motion } from "framer-motion";
 import { bonfire, colorPalette, colorWand } from "ionicons/icons";
+import FontSizeOption from "./appearance/FontSize";
+import TabSizeOption from "./appearance/TabSize";
 import BootstrapIconsOption from "./icons/BootstrapIcons";
 import IoniconsOption from "./icons/Ionicons";
 import BootstrapOption from "./superpowers/Bootstrap";
@@ -39,17 +41,8 @@ const PreferencesMenu = () => {
           <IonIcon icon={colorPalette} className="text-base" />
           <span>Appearance</span>
         </header>
-        <div className="flex items-center justify-between space-x-8">
-          <p>Font Size</p>
-
-          <div className="flex">
-            <input
-              type="text"
-              placeholder="14"
-              className="h-6 w-11 rounded-md border-t border-gray-500 bg-gray-600 px-2 text-gray-200 shadow-sm outline-none placeholder:text-gray-300"
-            />
-          </div>
-        </div>
+        <FontSizeOption />
+        <TabSizeOption />
 
         <div className="flex items-center justify-between space-x-8">
           <p>Font Family</p>
