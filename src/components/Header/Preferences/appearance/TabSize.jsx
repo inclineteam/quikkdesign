@@ -5,6 +5,7 @@ import { useState } from "react";
 import TabSizePicker from "./TabSizePicker";
 import { IonIcon } from "@ionic/react";
 import { chevronDown } from "ionicons/icons";
+import clsx from "clsx";
 
 const TabSizeOption = () => {
   const { tabSize } = usePreferencesStore();
@@ -18,7 +19,12 @@ const TabSizeOption = () => {
         <div className="relative">
           <button
             onClick={() => setShowPicker(!showPicker)}
-            className="flex h-6 w-11 items-center justify-between rounded-md border-t border-gray-500 bg-gray-600 px-2 text-left text-gray-200 shadow-sm outline-none placeholder:text-gray-300"
+            className={
+              "flex h-6 w-11 items-center justify-between rounded-md border-t border-[#494F68] bg-[#343849] px-2 text-left text-gray-200 shadow-sm outline-none duration-200 placeholder:text-gray-300 " +
+              clsx({
+                "border-white/20 bg-[#474B62]": showPicker,
+              })
+            }
           >
             <span>{tabSize}</span>
             <IonIcon icon={chevronDown} className="text-gray-400" />

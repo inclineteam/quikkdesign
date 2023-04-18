@@ -5,15 +5,16 @@ import { javascript as javascriptExt } from "@codemirror/lang-javascript";
 import Header from "./Header";
 import { logoCss3, logoHtml5, logoJavascript } from "ionicons/icons";
 import { useEditorStore } from "@/contexts/EditorContext";
+import Indicator from "./Indicator";
 
 const Editor = () => {
   const editorState = useEditorStore();
 
   return (
-    <div className="h-screen bg-[#282c34]">
+    <div className="h-screen bg-main">
       <Header />
 
-      <div className="flex overflow-x-hidden">
+      <div className="flex space-x-4 overflow-x-hidden px-4">
         <CodeEditor
           icon={logoHtml5}
           type="html"
@@ -36,6 +37,8 @@ const Editor = () => {
           lang={javascriptExt}
         />
       </div>
+
+      <Indicator />
     </div>
   );
 };

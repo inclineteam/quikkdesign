@@ -8,6 +8,7 @@ import prettier from "prettier/standalone";
 import htmlParser from "prettier/parser-html";
 import cssParser from "prettier/parser-postcss";
 import jsParser from "prettier/parser-babel";
+import { ReactComponent as DownloadIcon } from "@/assets/download-icon.svg";
 
 const SaveToDeviceBtn = () => {
   const { html, css, js } = useEditorStore();
@@ -67,9 +68,9 @@ const SaveToDeviceBtn = () => {
     <button
       onClick={saveProjectToDevice}
       data-tooltip="Save to your device"
-      className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
+      className="tooltip tlt-b flex items-center justify-center rounded-lg p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
     >
-      <IonIcon className="text-xl" icon={downloadOutline} />
+      <DownloadIcon />
     </button>
   );
 };

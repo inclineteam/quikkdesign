@@ -1,32 +1,30 @@
 import { IonIcon } from "@ionic/react";
 import ProjectName from "./ProjectName";
-import {
-  help,
-  logoGithub,
-  eyeOutline,
-  flashOutline,
-  buildOutline,
-} from "ionicons/icons";
-import { useEditorStore } from "@/contexts/EditorContext";
+import { logoGithub } from "ionicons/icons";
 import Logo from "../Logo";
 import SaveToDeviceBtn from "./SaveToDeviceBtn";
 import PreferencesBtn from "./Preferences/PreferencesBtn";
+import { usePreviewStore } from "@/contexts/PreviewContext";
+import { ReactComponent as HelpIcon } from "@/assets/help-icon.svg";
+import { ReactComponent as SaveIcon } from "@/assets/save-icon.svg";
+import { ReactComponent as EyeIcon } from "@/assets/eye-icon.svg";
+import { ReactComponent as BuildIcon } from "@/assets/build-icon.svg";
 
 const Header = () => {
-  const { previewRef, updateSourceDoc } = useEditorStore();
+  const { previewRef, updateSourceDoc } = usePreviewStore();
 
   return (
-    <header className="mx-auto mb-6 flex items-center justify-between space-x-10 px-4 py-2 text-white duration-200">
+    <header className="mb-6 flex items-center justify-between space-x-10 bg-subtle-bg px-4 py-2 text-white duration-200">
       <div className="flex items-center space-x-4">
         <Logo />
 
-        <div className="flex space-x-2 rounded-md border border-white/10 p-1">
+        <div className="flex space-x-2 rounded-full border-t border-white/10 bg-[#2E313E] px-3 py-1">
           <button
             onClick={updateSourceDoc}
             data-tooltip="Save"
-            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-lg px-2 py-1 text-white/90 duration-100 hover:bg-white/[0.05]"
+            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
-            <IonIcon className="text-lg text-white/50" icon={flashOutline} />
+            <SaveIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Save</span>
           </button>
 
@@ -35,9 +33,9 @@ const Header = () => {
               previewRef.current?.scrollIntoView({ behavior: "smooth" })
             }
             data-tooltip="Preview"
-            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-lg px-2 py-1 text-white/90 duration-100 hover:bg-white/[0.05]"
+            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
-            <IonIcon className="text-lg text-white/50" icon={eyeOutline} />
+            <EyeIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Preview</span>
           </button>
 
@@ -47,32 +45,32 @@ const Header = () => {
               previewRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
             data-tooltip="Save and Preview (Ctrl + s)"
-            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-lg px-2 py-1 text-white/90 duration-100 hover:bg-white/[0.05]"
+            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
-            <IonIcon className="text-lg text-white/50" icon={buildOutline} />
+            <BuildIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Run</span>
           </button>
         </div>
       </div>
 
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-4">
         <ProjectName />
         <SaveToDeviceBtn />
         <PreferencesBtn />
         <button
           data-tooltip="Help"
-          className="tooltip tlt-b flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
+          className="tooltip tlt-b flex items-center justify-center rounded-lg p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
         >
-          <IonIcon className="text-xl" icon={help} />
+          <HelpIcon />
         </button>
         <a
           href="https://github.com/inclineteam/quikkdesign"
           target="_blank"
           rel="noreferrer noopener"
           data-tooltip="Support"
-          className="tooltip tlt-br flex items-center justify-center rounded-lg px-2 py-1 text-white/80 duration-100 hover:bg-white/[0.05]"
+          className="tooltip tlt-br flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
         >
-          <IonIcon className="text-xl" icon={logoGithub} />
+          <IonIcon className="text-2xl" icon={logoGithub} />
         </a>
       </div>
     </header>

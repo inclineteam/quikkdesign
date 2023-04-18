@@ -1,7 +1,8 @@
-import { Reduce } from "akar-icons";
-import { Enlarge } from "akar-icons";
 import { useEditorStore } from "@/contexts/EditorContext";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
+import { ReactComponent as MinimizeIcon } from "@/assets/minimize-icon.svg";
+import { ReactComponent as ExpandIcon } from "@/assets/expand-icon.svg";
+import clsx from "clsx";
 
 const ToggleBtn = ({ type }) => {
   const { minimizedEditors, updateMinimizedEditors } = useEditorStore();
@@ -22,15 +23,26 @@ const ToggleBtn = ({ type }) => {
   };
 
   return (
-    <div className="ml-2 flex border-l border-white/10 pl-2">
+    <div
+      className={
+        "ml-2 flex " +
+        clsx({
+          "ml-2": isMinimized,
+        })
+      }
+    >
       <button
         data-tooltip={isMinimized ? "Expand" : "Minimize"}
         className={`tooltip ${
           type === "js" ? "tlt-br" : "tlt-b"
-        } group flex items-center rounded-lg p-1 duration-200 hover:bg-cyan-500/10 hover:text-cyan-400`}
+        } group flex items-center rounded-xl p-1 duration-200 hover:bg-cyan-500/10`}
         onClick={toggleEditor}
       >
-        {isMinimized ? <Enlarge size={16} /> : <Reduce size={16} />}
+        {isMinimized ? (
+          <ExpandIcon className="h-6 w-6 group-hover:[&>path]:stroke-cyan-400" />
+        ) : (
+          <MinimizeIcon className="h-6 w-6 group-hover:[&>path]:stroke-cyan-400" />
+        )}
       </button>
     </div>
   );

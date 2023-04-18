@@ -3,69 +3,38 @@ import { usePreferencesStore } from "@/contexts/PreferencesContext";
 import { motion } from "framer-motion";
 
 const TabSizePicker = () => {
-  const { tabSize, updateTabSize } = usePreferencesStore();
-
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, translateY: 10, scale: 1 }}
-      className="absolute right-0 z-50 mt-1 w-max space-y-1 rounded-md border border-white/10 border-t-white/20 bg-gray-500 p-1 text-sm font-medium text-white shadow-xl"
+      initial={{ opacity: 0, translateY: 10 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      exit={{ opacity: 0, translateY: 10 }}
+      className="absolute right-0 z-50 mt-1 w-max space-y-1 rounded-xl border border-[#383C4F] bg-menu-bg p-1 text-sm font-medium text-white shadow-[0_0px_10px_0] shadow-black/50"
     >
-      <button
-        onClick={() => updateTabSize(2)}
-        className={
-          "block rounded-md border-t py-0.5 pl-2 pr-6 text-left duration-150 " +
-          clsx({
-            "border-gray-300 bg-gray-400 text-gray-800 shadow-sm":
-              tabSize === 2,
-            "border-transparent hover:bg-gray-600": tabSize !== 2,
-          })
-        }
-      >
-        2
-      </button>
-      <button
-        onClick={() => updateTabSize(4)}
-        className={
-          "block rounded-md border-t py-0.5 pl-2 pr-6 text-left duration-150 " +
-          clsx({
-            "border-gray-300 bg-gray-400 text-gray-800 shadow-sm":
-              tabSize === 4,
-            "border-transparent hover:bg-gray-600": tabSize !== 4,
-          })
-        }
-      >
-        4
-      </button>
-      <button
-        onClick={() => updateTabSize(6)}
-        className={
-          "block rounded-md border-t py-0.5 pl-2 pr-6 text-left duration-150 " +
-          clsx({
-            "border-gray-300 bg-gray-400 text-gray-800 shadow-sm":
-              tabSize === 6,
-            "border-transparent hover:bg-gray-600": tabSize !== 6,
-          })
-        }
-      >
-        6
-      </button>
-      <button
-        onClick={() => updateTabSize(8)}
-        className={
-          "block rounded-md border-t py-0.5 pl-2 pr-6 text-left duration-150 " +
-          clsx({
-            "border-gray-300 bg-gray-400 text-gray-800 shadow-sm":
-              tabSize === 8,
-            "border-transparent hover:bg-gray-600": tabSize !== 8,
-          })
-        }
-      >
-        8
-      </button>
+      <Option size={2} />
+      <Option size={4} />
+      <Option size={6} />
+      <Option size={8} />
     </motion.div>
   );
 };
 
 export default TabSizePicker;
+
+const Option = ({ size }) => {
+  const { tabSize, updateTabSize } = usePreferencesStore();
+
+  return (
+    <button
+      onClick={() => updateTabSize(size)}
+      className={
+        "block rounded-lg border-t py-0.5 pl-2 pr-8 text-left duration-150 " +
+        clsx({
+          "border-[#6D7596] bg-[#454B64] shadow-sm": tabSize === size,
+          "border-transparent hover:bg-[#383C4D]": tabSize !== size,
+        })
+      }
+    >
+      {size}
+    </button>
+  );
+};

@@ -5,6 +5,8 @@ const editorStore = createStore((set) => ({
   css: "",
   js: "",
   minimizedEditors: 0,
+  currentEditor: "",
+  updateCurrentEditor: (editor) => set({ currentEditor: editor }),
   updateHtml: (val) => set({ html: val }),
   updateCss: (val) => set({ css: val }),
   updateJs: (val) => set({ js: val }),

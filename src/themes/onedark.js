@@ -16,9 +16,9 @@ const chalky = "#e5c07b",
   violet = "#c678dd",
   darkBackground = "#21252b",
   highlightBackground = "#2c313a",
-  background = "#282c34",
+  background = "#1C1E26",
   tooltipBackground = "#353a42",
-  selection = "#3E4451",
+  selection = "#2E313Ee6",
   cursor = "#528bff";
 
 /// The colors used in the theme, as CSS color strings.
@@ -47,11 +47,13 @@ export const oneDarkTheme = EditorView.theme(
     "&": {
       color: ivory,
       backgroundColor: background,
+      cursor: "text",
     },
 
     ".cm-content": {
       caretColor: cursor,
       fontFamily: "Spline Sans Mono",
+      paddingTop: "10px",
     },
 
     ".ͼi": {
@@ -82,11 +84,19 @@ export const oneDarkTheme = EditorView.theme(
       backgroundColor: "#6199ff2f",
     },
 
-    ".cm-activeLine": { backgroundColor: "#6699ff0b" },
+    ".cm-activeLine": {
+      backgroundColor: "transparent",
+      borderRadius: "8px",
+    },
     ".cm-selectionMatch": { backgroundColor: "#aafe661a" },
 
     "&.cm-focused .cm-matchingBracket, &.cm-focused .cm-nonmatchingBracket": {
       backgroundColor: "#bad0f847",
+    },
+
+    // 272936
+    "&.cm-focused .cm-activeLine": {
+      backgroundColor: "#2E313E4d",
     },
 
     ".cm-gutters": {
@@ -96,7 +106,7 @@ export const oneDarkTheme = EditorView.theme(
     },
 
     ".cm-activeLineGutter": {
-      backgroundColor: highlightBackground,
+      backgroundColor: "transparent",
     },
 
     ".cm-foldPlaceholder": {

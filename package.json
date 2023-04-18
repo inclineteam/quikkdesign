@@ -30,6 +30,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "link:@codemirror/legacy-modes/mode/sass",
+    "vite-plugin-svgr": "^2.4.0",
     "zustand": "^4.3.7"
   },
   "devDependencies": {

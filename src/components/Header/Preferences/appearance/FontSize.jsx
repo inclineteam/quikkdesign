@@ -13,7 +13,7 @@ const FontSizeOption = () => {
           value={fontSize}
           onChange={(e) => updateFontSize(e.target.value)}
           placeholder={fontSize}
-          className="h-6 w-11 rounded-md border-t border-gray-500 bg-gray-600 px-2 text-gray-200 shadow-sm outline-none placeholder:text-gray-300"
+          className="h-6 w-11 rounded-md border-t border-[#494F68] bg-[#343849] px-2 text-gray-200 shadow-sm outline-none placeholder:text-gray-300"
         />
       </div>
     </div>

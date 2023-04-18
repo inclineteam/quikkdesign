@@ -2,7 +2,7 @@ import { EditorView } from "@codemirror/view";
 import { indentUnit } from "@codemirror/language";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import clsx from "clsx";
-import { oneDark } from "../../themes/onedark";
+import { oneDark } from "@/themes/onedark";
 import { colorPicker } from "@replit/codemirror-css-color-picker";
 import {
   abbreviationTracker,
@@ -11,12 +11,14 @@ import {
 import { keymap } from "@codemirror/view";
 import CodeEditorHeader from "./CodeEditorHeader";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
+import { useEditorStore } from "@/contexts/EditorContext";
 import FormatBtn from "./FormatBtn";
 import ToggleBtn from "./ToggleBtn";
 import { usePreferencesStore } from "@/contexts/PreferencesContext";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();
+  const { updateCurrentEditor } = useEditorStore();
   const { tabSize, fontSize } = usePreferencesStore();
 
   // returns the needed extension for each editor
@@ -25,7 +27,7 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
       lang(),
       EditorView.lineWrapping,
       colorPicker,
-      indentUnit.of(" ".repeat(tabSize === 0 || tabSize === "" ? 2 : tabSize)),
+      indentUnit.of(" ".repeat(tabSize)),
     ];
 
     if (type === "html") {
@@ -47,10 +49,9 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
   return (
     <div
       className={
-        "h-max border-b border-l border-white/10 duration-200 first:border-l-0 " +
+        "h-max space-y-2 rounded-xl bg-subtle-bg p-2 duration-200 first:border-l-0 " +
         clsx({
-          "w-[80px]": isMinimized,
-          "w-full": !isMinimized,
+          "flex-1": !isMinimized,
         })
       }
     >
@@ -58,17 +59,17 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
         <FormatBtn type={type} value={value} update={update} />
         <ToggleBtn type={type} />
       </CodeEditorHeader>
-
       <ReactCodeMirror
-        height="80vh"
+        height="70vh"
         extensions={exts()}
+        onFocus={() => updateCurrentEditor(type)}
         value={value}
         onChange={(val) => update(val)}
         style={{
           fontSize: fontSize + "px",
         }}
         className={
-          "w-full duration-150 [&>.cm-focused]:outline-none " +
+          "w-full overflow-hidden rounded-xl duration-150 [&>.cm-focused]:outline-none " +
           clsx({
             "opacity-0": isMinimized,
           })

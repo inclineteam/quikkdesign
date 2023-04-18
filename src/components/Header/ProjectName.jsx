@@ -19,19 +19,19 @@ const ProjectName = () => {
 
   return (
     <div
-      className={`z-50 flex items-center space-x-2 rounded-lg border border-white/10 py-1 pl-2 pr-1 text-white/80 shadow shadow-black/10 duration-200 ${clsx(
+      className={`z-50 flex items-center space-x-2 rounded-xl border-t border-white/10 bg-[#2E313E] py-1 pl-3 pr-2 text-white/80 shadow shadow-black/10 duration-200 ${clsx(
         {
-          "translate-y-2 bg-white/[0.05]": edit,
+          "translate-y-5": edit,
         }
       )}`}
     >
       <input
         value={projectName}
         onChange={(e) => updateProjectName(e.target.value)}
-        className={`w-max bg-transparent font-spline text-sm outline-none duration-200 ${clsx(
+        className={`w-max bg-transparent text-sm font-medium outline-none duration-200 ${clsx(
           {
             "text-white": edit,
-            "text-white/70": !edit,
+            "text-[#EBEBF4]": !edit,
           }
         )}`}
         onKeyDown={handleNewProjectName}
