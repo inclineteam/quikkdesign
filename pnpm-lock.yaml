@@ -68,7 +68,7 @@ devDependencies:
   postcss: 8.4.21
   prettier-plugin-tailwindcss: 0.2.6_prettier@2.8.7
   tailwindcss: 3.3.1_postcss@8.4.21
-  vite: 4.2.1
+  vite: 4.2.1_7hsu54zergyte5jpun5lehz3ve
 
 packages:
 
@@ -1076,7 +1076,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.21.4
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.2.1
+      vite: 4.2.1_7hsu54zergyte5jpun5lehz3ve
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2093,13 +2093,13 @@ packages:
     dependencies:
       '@rollup/pluginutils': 5.0.2
       '@svgr/core': 6.5.1
-      vite: 4.2.1
+      vite: 4.2.1_7hsu54zergyte5jpun5lehz3ve
     transitivePeerDependencies:
       - rollup
       - supports-color
     dev: false
 
-  /vite/4.2.1:
+  /vite/4.2.1_7hsu54zergyte5jpun5lehz3ve:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2128,6 +2128,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.1
       rollup: 3.20.2
+      sass: link:@codemirror/legacy-modes/mode/sass
     optionalDependencies:
       fsevents: 2.3.2
 
