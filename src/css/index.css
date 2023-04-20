@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "Inter";
+}
+
 body::-webkit-scrollbar {
   width: 10px;
   background-color: #191e29;
