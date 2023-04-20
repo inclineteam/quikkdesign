@@ -1,5 +1,3 @@
-import { IonIcon } from "@ionic/react";
-import { settingsOutline } from "ionicons/icons";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import clsx from "clsx";

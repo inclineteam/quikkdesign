@@ -68,7 +68,7 @@ const SaveToDeviceBtn = () => {
     <button
       onClick={saveProjectToDevice}
       data-tooltip="Save to your device"
-      className="tooltip tlt-b flex items-center justify-center rounded-lg p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
+      className="tooltip tlt-b flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
     >
       <DownloadIcon />
     </button>

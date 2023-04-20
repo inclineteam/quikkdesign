@@ -9,6 +9,8 @@ import { ReactComponent as HelpIcon } from "@/assets/help-icon.svg";
 import { ReactComponent as SaveIcon } from "@/assets/save-icon.svg";
 import { ReactComponent as EyeIcon } from "@/assets/eye-icon.svg";
 import { ReactComponent as BuildIcon } from "@/assets/build-icon.svg";
+import clsx from "clsx";
+import DownloadAppBtn from "./Preferences/download/DownloadAppBtn";
 
 const Header = () => {
   const { previewRef, updateSourceDoc } = usePreviewStore();
@@ -59,7 +61,7 @@ const Header = () => {
         <PreferencesBtn />
         <button
           data-tooltip="Help"
-          className="tooltip tlt-b flex items-center justify-center rounded-lg p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
+          className="tooltip tlt-b flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
         >
           <HelpIcon />
         </button>
@@ -68,10 +70,17 @@ const Header = () => {
           target="_blank"
           rel="noreferrer noopener"
           data-tooltip="Support"
-          className="tooltip tlt-br flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
+          className={
+            "tooltip flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732] " +
+            clsx({
+              "tlt-br": window.__TAURI__,
+              "tlt-b": !window.__TAURI__,
+            })
+          }
         >
           <IonIcon className="text-2xl" icon={logoGithub} />
         </a>
+        <DownloadAppBtn />
       </div>
     </header>
   );

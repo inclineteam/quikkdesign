@@ -8,10 +8,10 @@ body {
 
 body::-webkit-scrollbar {
   width: 10px;
-  background-color: #191e29;
-  border-left: 1px solid #3f434e;
+  background-color: #16171d;
+  border-left: 1px solid #2e313e;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #414755;
+  background-color: #2e313e;
 }

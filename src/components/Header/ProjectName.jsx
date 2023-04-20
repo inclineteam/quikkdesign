@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Pencil, Check } from "akar-icons";
+import { ReactComponent as PenIcon } from "@/assets/pen-icon.svg";
+import { ReactComponent as ArrowUpIcon } from "@/assets/arrow-up-icon.svg";
 import clsx from "clsx";
 import { useRef } from "react";
 import { useProjectStore } from "@/contexts/ProjectContext";
@@ -46,7 +47,7 @@ const ProjectName = () => {
           onClick={() => setEdit(false)}
           className="tooltip tlt-b rounded-lg p-1 text-sky-300 hover:bg-sky-500/20 hover:text-sky-300"
         >
-          <Check className="h-4 w-4" />
+          <ArrowUpIcon className="h-4 w-4" />
         </button>
       ) : (
         <button
@@ -55,9 +56,9 @@ const ProjectName = () => {
             setEdit(true);
             inputRef?.current.focus();
           }}
-          className={`tooltip tlt-b rounded-lg p-1 text-white/50 hover:bg-sky-500/20 hover:text-sky-300`}
+          className={`tooltip tlt-b rounded-lg p-1 text-[#81869E] hover:bg-sky-500/20 hover:text-sky-300`}
         >
-          <Pencil className="h-4 w-4" />
+          <PenIcon className="h-4 w-4" />
         </button>
       )}
     </div>
