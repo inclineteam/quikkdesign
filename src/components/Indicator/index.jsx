@@ -1,6 +1,4 @@
-import { IonIcon } from "@ionic/react";
 import { usePreferencesStore } from "@/contexts/PreferencesContext";
-import { colorWand } from "ionicons/icons";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { useEditorStore } from "@/contexts/EditorContext";
@@ -14,7 +12,7 @@ const Indicator = () => {
 
   return (
     <div className="mt-4 flex items-center justify-between px-4">
-      <motion.div className="flex w-max items-center space-x-3 rounded-full bg-subtle-bg py-2 pl-4 pr-2 text-sm text-[#EBEBF4]">
+      <motion.div className="flex w-max items-center space-x-3 rounded-full bg-subtle-bg py-1.5 pl-4 pr-1.5 text-sm text-[#EBEBF4]">
         <div
           data-tooltip="Active superpowers"
           className="tooltip tlt-bl group flex items-center"

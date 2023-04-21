@@ -1,8 +1,22 @@
-import { IonIcon } from "@ionic/react";
 import clsx from "clsx";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
+import { ReactComponent as LogoCSSIcon } from "@/assets/logo/logo-css3.svg";
+import { ReactComponent as LogoHTMLIcon } from "@/assets/logo/logo-html5.svg";
+import { ReactComponent as LogoJSIcon } from "@/assets/logo/logo-javascript.svg";
 
-const CodeEditorHeader = ({ children, icon, type }) => {
+const icons = {
+  html: <LogoHTMLIcon className="h-5 w-5" />,
+  css: <LogoCSSIcon className="h-5 w-5" />,
+  js: <LogoJSIcon className="h-5 w-5" />,
+};
+
+const iconColors = {
+  html: "fill-amber-400 text-amber-400",
+  css: "fill-sky-400 text-sky-400",
+  js: "fill-yellow-400 text-yellow-400",
+};
+
+const CodeEditorHeader = ({ children, type }) => {
   const { isMinimized } = useCodeEditorContext();
 
   return (
@@ -14,14 +28,8 @@ const CodeEditorHeader = ({ children, icon, type }) => {
         })
       }
     >
-      <div
-        className={`flex items-center space-x-2 ${clsx({
-          "text-amber-400": type === "html",
-          "text-sky-400": type === "css",
-          "text-yellow-400": type === "js",
-        })}`}
-      >
-        <IonIcon icon={icon} className="text-lg" />
+      <div className={"flex items-center space-x-2 " + iconColors[type]}>
+        {icons[type]}
         {!isMinimized && <p className="font-bold">{type}</p>}
       </div>
 

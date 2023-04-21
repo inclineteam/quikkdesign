@@ -2,8 +2,6 @@ import { useProjectStore } from "@/contexts/ProjectContext";
 import { useEditorStore } from "@/contexts/EditorContext";
 import { saveAs } from "file-saver";
 import JSZip from "jszip";
-import { IonIcon } from "@ionic/react";
-import { downloadOutline } from "ionicons/icons";
 import prettier from "prettier/standalone";
 import htmlParser from "prettier/parser-html";
 import cssParser from "prettier/parser-postcss";

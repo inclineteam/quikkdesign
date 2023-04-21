@@ -3,8 +3,7 @@ import ClickAway from "@/components/ClickAway";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import TabSizePicker from "./TabSizePicker";
-import { IonIcon } from "@ionic/react";
-import { chevronDown } from "ionicons/icons";
+import { ReactComponent as ChevronDownIcon } from "@/assets/chevron-down-icon.svg";
 import clsx from "clsx";
 
 const TabSizeOption = () => {
@@ -20,14 +19,19 @@ const TabSizeOption = () => {
           <button
             onClick={() => setShowPicker(!showPicker)}
             className={
-              "flex h-6 w-11 items-center justify-between rounded-md border-t border-[#494F68] bg-[#343849] px-2 text-left text-gray-200 shadow-sm outline-none duration-200 placeholder:text-gray-300 " +
+              "flex h-6 w-12 items-center justify-between space-x-2 rounded-md border-t border-[#494F68] bg-[#343849] px-2 text-left text-gray-200 shadow-sm outline-none duration-200 placeholder:text-gray-300 " +
               clsx({
                 "border-white/20 bg-[#474B62]": showPicker,
               })
             }
           >
             <span>{tabSize}</span>
-            <IonIcon icon={chevronDown} className="text-gray-400" />
+            <ChevronDownIcon
+              className={
+                "h-4 w-4 duration-200 [&>path]:stroke-gray-400 " +
+                clsx({ "rotate-180 [&>path]:stroke-gray-200": showPicker })
+              }
+            />
           </button>
 
           <AnimatePresence>{showPicker && <TabSizePicker />}</AnimatePresence>

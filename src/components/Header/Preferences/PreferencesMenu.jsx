@@ -1,6 +1,4 @@
-import { IonIcon } from "@ionic/react";
 import { motion } from "framer-motion";
-import { bonfire, colorPalette, colorWand } from "ionicons/icons";
 import FontSizeOption from "./appearance/FontSize";
 import TabSizeOption from "./appearance/TabSize";
 import BootstrapIconsOption from "./icons/BootstrapIcons";
@@ -8,6 +6,9 @@ import IoniconsOption from "./icons/Ionicons";
 import BootstrapOption from "./superpowers/Bootstrap";
 import JQueryOption from "./superpowers/JQuery";
 import TailwindOption from "./superpowers/Tailwind";
+import { ReactComponent as PaletteIcon } from "@/assets/palette-icon.svg";
+import { ReactComponent as WandIcon } from "@/assets/wand-icon.svg";
+import { ReactComponent as LibraryIcon } from "@/assets/library-icon.svg";
 
 const PreferencesMenu = () => {
   return (
@@ -17,9 +18,9 @@ const PreferencesMenu = () => {
       exit={{ opacity: 0, translateY: 10 }}
       className="absolute right-0 z-50 mt-2 w-max space-y-2 rounded-3xl border border-[#383C4F] bg-menu-bg p-2 text-sm text-white shadow-xl"
     >
-      <div className="space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
-        <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E]">
-          <IonIcon icon={colorWand} className="text-base" />
+      <div className="group space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
+        <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E] duration-150 group-hover:text-purple-400">
+          <WandIcon className="h-4 w-4" />
           <span>Superpowers</span>
         </header>
         <JQueryOption />
@@ -27,18 +28,18 @@ const PreferencesMenu = () => {
         <BootstrapOption />
       </div>
 
-      <div className="space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
-        <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E]">
-          <IonIcon icon={bonfire} className="text-base" />
+      <div className="group space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
+        <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E] duration-150 group-hover:text-sky-400">
+          <LibraryIcon className="h-4 w-4" />
           <span>Icons</span>
         </header>
         <IoniconsOption />
         <BootstrapIconsOption />
       </div>
 
-      <div className="space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
-        <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E]">
-          <IonIcon icon={colorPalette} className="text-base" />
+      <div className="group space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
+        <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E] duration-150 group-hover:text-indigo-400">
+          <PaletteIcon className="h-4 w-4" />
           <span>Appearance</span>
         </header>
         <FontSizeOption />

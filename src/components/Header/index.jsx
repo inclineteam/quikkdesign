@@ -1,16 +1,16 @@
-import { IonIcon } from "@ionic/react";
 import ProjectName from "./ProjectName";
-import { logoGithub } from "ionicons/icons";
 import Logo from "../Logo";
 import SaveToDeviceBtn from "./SaveToDeviceBtn";
 import PreferencesBtn from "./Preferences/PreferencesBtn";
 import { usePreviewStore } from "@/contexts/PreviewContext";
-import { ReactComponent as HelpIcon } from "@/assets/help-icon.svg";
 import { ReactComponent as SaveIcon } from "@/assets/save-icon.svg";
 import { ReactComponent as EyeIcon } from "@/assets/eye-icon.svg";
 import { ReactComponent as BuildIcon } from "@/assets/build-icon.svg";
+import { ReactComponent as LogoGithubIcon } from "@/assets/logo/logo-github.svg";
 import clsx from "clsx";
-import DownloadAppBtn from "./Preferences/download/DownloadAppBtn";
+import DownloadAppBtn from "./Download/DownloadAppBtn";
+import HelpBtn from "./Help/HelpBtn";
+import ShareBtn from "./Share/ShareBtn";
 
 const Header = () => {
   const { previewRef, updateSourceDoc } = usePreviewStore();
@@ -59,26 +59,22 @@ const Header = () => {
         <ProjectName />
         <SaveToDeviceBtn />
         <PreferencesBtn />
-        <button
-          data-tooltip="Help"
-          className="tooltip tlt-b flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
-        >
-          <HelpIcon />
-        </button>
+        <ShareBtn />
+        <HelpBtn />
         <a
           href="https://github.com/inclineteam/quikkdesign"
           target="_blank"
           rel="noreferrer noopener"
           data-tooltip="Support"
           className={
-            "tooltip flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732] " +
+            "tooltip flex items-center justify-center rounded-xl p-1.5 duration-100 hover:bg-[#252732] " +
             clsx({
               "tlt-br": window.__TAURI__,
               "tlt-b": !window.__TAURI__,
             })
           }
         >
-          <IonIcon className="text-2xl" icon={logoGithub} />
+          <LogoGithubIcon className="h-6 w-6 fill-[#BCC1D4]" />
         </a>
         <DownloadAppBtn />
       </div>
