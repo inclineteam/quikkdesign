@@ -1,6 +1,6 @@
 [package]
 name = "quikkdesign"
-version = "0.1.3"
+version = "0.1.4"
 description = "A simple HTML, CSS, and JS editor with a user-friendly UI to help you design faster"
 authors = ["Incline"]
 license = ""

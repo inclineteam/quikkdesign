@@ -18,22 +18,22 @@ const DownloadAppMenu = () => {
         <Item
           name="Debian"
           ext="(.deb)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/main/quikk-design_0.1.3_amd64.deb"
+          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/quikk-design_0.1.3_amd64.deb"
         />
         <Item
           name="App Image"
           ext="(.AppImage)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/main/quikk-design_0.1.3_amd64.AppImage"
+          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/quikk-design_0.1.3_amd64.AppImage"
         />
         <Item
           name="Apple Disk Image"
           ext="(.dmg)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/main/QuikkDesign_0.1.3_x64.dmg"
+          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/QuikkDesign_0.1.3_x64.dmg"
         />
         <Item
           name="Zip"
           ext="(.tar.gz)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/main/QuikkDesign.app.tar.gz"
+          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/QuikkDesign.app.tar.gz"
         />
       </div>
     </motion.div>
