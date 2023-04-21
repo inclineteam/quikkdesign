@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactComponent as MonitorIcon } from "@/assets/monitor-icon.svg";
 import { saveAs } from "file-saver";
+import { version } from "../../../../package.json";
 
 const DownloadAppMenu = () => {
   return (
@@ -18,22 +19,22 @@ const DownloadAppMenu = () => {
         <Item
           name="Debian"
           ext="(.deb)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/quikk-design_0.1.3_amd64.deb"
+          link={`https://github.com/inclineteam/quikkdesign/releases/download/${version}/quikk-design_${version}_amd64.deb`}
         />
         <Item
           name="App Image"
           ext="(.AppImage)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/quikk-design_0.1.3_amd64.AppImage"
+          link={`https://github.com/inclineteam/quikkdesign/releases/download/${version}/quikk-design_${version}_amd64.AppImage`}
         />
         <Item
           name="Apple Disk Image"
           ext="(.dmg)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/QuikkDesign_0.1.3_x64.dmg"
+          link={`https://github.com/inclineteam/quikkdesign/releases/download/${version}/QuikkDesign_${version}_x64.dmg`}
         />
         <Item
           name="Zip"
           ext="(.tar.gz)"
-          link="https://github.com/inclineteam/quikkdesign/releases/download/0.1.3/QuikkDesign.app.tar.gz"
+          link={`https://github.com/inclineteam/quikkdesign/releases/download/${version}/QuikkDesign.app.tar.gz`}
         />
       </div>
     </motion.div>
