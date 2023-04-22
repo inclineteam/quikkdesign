@@ -1,7 +1,6 @@
 import Editor from "@/components/Editor";
 import Preview from "@/components/Preview";
 import { usePreviewStore } from "@/contexts/PreviewContext";
-import Indicator from "@/components/Indicator";
 
 export default function App() {
   const { previewRef, updateSourceDoc } = usePreviewStore();

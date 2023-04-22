@@ -16,17 +16,29 @@ const HelpMenu = () => {
           <div>Keybindings</div>
         </header>
         <div>
-          <kbd className="block w-full list-none rounded-lg bg-white/[0.05] px-2 py-1 text-left font-spline font-medium">
+          <kbd className="block w-full list-none rounded-lg bg-[#2a2e3b] px-2 py-1 text-left font-spline font-medium">
             Ctrl + e
           </kbd>
-          <div className="p-2">Expands your emmet snippet</div>
+          <div className="p-2 text-[#81869E]">Expands your emmet snippet</div>
         </div>
         <div>
-          <kbd className="block w-full rounded-lg bg-white/[0.05] px-2 py-1 font-spline font-medium">
+          <kbd className="block w-full rounded-lg bg-[#2a2e3b] px-2 py-1 font-spline font-medium">
             Ctrl + s
           </kbd>
-          <div className="p-2">Saves your project and see the preview</div>
+          <div className="p-2 text-[#81869E]">
+            Saves your project and see the preview
+          </div>
         </div>
+      </div>
+
+      <div className="space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
+        Found any bugs? you can report it to us on{" "}
+        <a
+          href="https://github.com/inclineteam/quikkdesign"
+          className="font-medium text-violet-400 underline-offset-2 hover:underline"
+        >
+          Github
+        </a>
       </div>
     </motion.div>
   );
