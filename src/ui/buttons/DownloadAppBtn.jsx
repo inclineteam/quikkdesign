@@ -1,9 +1,9 @@
-import { ReactComponent as DownloadAppIcon } from "@/assets/dlapp-icon.svg";
+import { DownloadAppIcon } from "@/assets";
 import ClickAway from "@/components/ClickAway";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import DownloadAppMenu from "./DownloadAppMenu";
+import { DownloadAppMenu } from "@/components/menu";
 
 const DownloadAppBtn = () => {
   const [showDLMenu, setShowDLMenu] = useState(false);

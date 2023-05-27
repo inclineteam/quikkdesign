@@ -1,7 +1,6 @@
 import { useEditorStore } from "@/contexts/EditorContext";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
-import { ReactComponent as MinimizeIcon } from "@/assets/minimize-icon.svg";
-import { ReactComponent as ExpandIcon } from "@/assets/expand-icon.svg";
+import { ExpandIcon, MinimizeIcon } from "@/assets";
 import clsx from "clsx";
 
 const ToggleBtn = ({ type }) => {

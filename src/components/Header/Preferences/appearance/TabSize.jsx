@@ -3,7 +3,7 @@ import ClickAway from "@/components/ClickAway";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import TabSizePicker from "./TabSizePicker";
-import { ReactComponent as ChevronDownIcon } from "@/assets/chevron-down-icon.svg";
+import { ChevronDownIcon } from "@/assets";
 import clsx from "clsx";
 
 const TabSizeOption = () => {

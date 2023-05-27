@@ -1,27 +1,48 @@
 import { usePreviewStore } from "@/contexts/PreviewContext";
-import { ReactComponent as FullscreenIcon } from "@/assets/fullscreen-icon.svg";
-import { ReactComponent as SaveIcon } from "@/assets/download-icon.svg";
+import { MobileIcon, SaveIcon, FullscreenIcon } from "@/assets";
+import ScreenSize from "./ScreenSize";
+import { useEffect } from "react";
+import Screen from "./Screen";
+import clsx from "clsx";
 
 const Preview = () => {
-  const { sourceDoc, previewRef } = usePreviewStore();
+  const {
+    previewRef,
+    screenRef,
+    toggleResizer,
+    resizer,
+    updateMaxScreenWidth,
+  } = usePreviewStore();
+
+  useEffect(() => {
+    updateMaxScreenWidth(screenRef.current.clientWidth);
+  }, []);
 
   return (
-    <div className="flex h-screen flex-col bg-gradient-to-b from-[#16171D] to-[#381b50] p-5">
-      <iframe
-        srcDoc={sourceDoc}
-        title="output"
-        sandbox="allow-scripts"
-        width="100%"
-        height="100%"
-        className="rounded-xl border-0 bg-white"
-      />
-      <div className="mt-5 flex items-center justify-between rounded-xl bg-violet-300/10 p-2 text-sm">
+    <div className="relative flex h-screen flex-col bg-gradient-to-b from-[#16171D] to-[#381b50] p-5">
+      <Screen />
+      <div
+        className={
+          "flex items-center justify-between rounded-xl bg-violet-300/10 p-2 text-sm duration-200 " +
+          clsx({ "mt-5": !resizer, "mt-8": resizer })
+        }
+      >
         <button className="flex items-center space-x-2 rounded-lg px-3 font-medium text-white">
           <div className="h-3.5 w-3.5 rounded bg-white"></div>
           <span>Rounded</span>
         </button>
 
         <div className="flex">
+          <ScreenSize />
+          <button
+            onClick={() => toggleResizer(!resizer)}
+            className="flex items-center space-x-2 rounded-lg bg-transparent px-3 font-medium text-white duration-200"
+          >
+            <MobileIcon className="h-5 w-5 [&>g]:stroke-white" />
+            <span className={clsx({ "font-medium text-cyan-400": resizer })}>
+              Responsive
+            </span>
+          </button>
           <button className="flex items-center space-x-2 rounded-lg bg-transparent px-3 font-medium text-white duration-200">
             <SaveIcon className="h-5 w-5 [&>g]:stroke-white" />
             <span>Save this preview</span>

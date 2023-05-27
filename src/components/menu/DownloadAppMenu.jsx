@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ReactComponent as MonitorIcon } from "@/assets/monitor-icon.svg";
+import { MonitorIcon } from "@/assets";
 import { saveAs } from "file-saver";
-import { version } from "../../../../package.json";
+import { version } from "../../../package.json";
 
 const DownloadAppMenu = () => {
   return (
@@ -50,11 +50,14 @@ const Item = ({ link, name, ext }) => (
   >
     <div
       className={
-        "absolute top-1/2 h-1.5 w-0 -translate-y-1/2 rounded-l-md rounded-r-full bg-violet-400 duration-150 group-hover:w-2.5 "
+        "absolute top-1/2 h-1.5 w-0 -translate-y-1/2 rounded-l-md rounded-r-full bg-violet-400 duration-150 group-hover:w-2.5"
       }
     ></div>
     <div className="duration-150 group-hover:translate-x-2 group-hover:text-violet-300 group-focus:font-semibold">
-      <span>{name}</span> <span className="text-[#81869E]">{ext}</span>
+      <span>{name}</span>{" "}
+      <span className="text-[#81869E] duration-150 group-hover:font-medium group-hover:text-violet-200">
+        {ext}
+      </span>
     </div>
   </button>
 );

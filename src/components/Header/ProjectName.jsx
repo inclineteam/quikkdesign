@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { ReactComponent as PenIcon } from "@/assets/pen-icon.svg";
-import { ReactComponent as ArrowUpIcon } from "@/assets/arrow-up-icon.svg";
 import clsx from "clsx";
 import { useRef } from "react";
 import { useProjectStore } from "@/contexts/ProjectContext";
+import { ArrowUpIcon, PenIcon } from "@/assets";
 
 const ProjectName = () => {
   const inputRef = useRef(null);

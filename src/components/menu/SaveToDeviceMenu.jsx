@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ReactComponent as ThreeSQIcon } from "@/assets/three-sq-icon.svg";
+import { SaveIcon } from "@/assets";
 
-const ShareMenu = () => {
+const SaveToDeviceMenu = () => {
   return (
     <motion.div
       initial={{ opacity: 0, translateY: 20 }}
@@ -11,16 +11,13 @@ const ShareMenu = () => {
     >
       <div className="space-y-2 rounded-2xl bg-black/20 p-3 text-gray-100">
         <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E]">
-          <ThreeSQIcon className="h-4 w-4" />
-          <div>Share project</div>
+          <SaveIcon className="h-4 w-4" />
+          <div>Download your project</div>
         </header>
-        <div className="max-w-[20ch]">
-          Share your to project to everyone{" "}
-          <span className="font-medium text-violet-400">soon!</span>
-        </div>
+        <div className="max-w-[20ch]">Meow</div>
       </div>
     </motion.div>
   );
 };
 
-export default ShareMenu;
+export default SaveToDeviceMenu;

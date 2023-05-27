@@ -6,11 +6,16 @@ import prettier from "prettier/standalone";
 import htmlParser from "prettier/parser-html";
 import cssParser from "prettier/parser-postcss";
 import jsParser from "prettier/parser-babel";
-import { ReactComponent as DownloadIcon } from "@/assets/download-icon.svg";
+import { SaveIcon } from "@/assets";
+import { useState } from "react";
+import ClickAway from "@/components/ClickAway";
+import { AnimatePresence } from "framer-motion";
+import { SaveToDeviceMenu } from "@/components/menu";
 
 const SaveToDeviceBtn = () => {
   const { html, css, js } = useEditorStore();
   const { projectName } = useProjectStore();
+  const [showSaveMenu, setShowSaveMenu] = useState(false);
 
   const saveProjectToDevice = () => {
     const htmlTemplate = `
@@ -63,13 +68,21 @@ const SaveToDeviceBtn = () => {
   };
 
   return (
-    <button
-      onClick={saveProjectToDevice}
-      data-tooltip="Save to your device"
-      className="tooltip tlt-b flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
-    >
-      <DownloadIcon />
-    </button>
+    <ClickAway onClickOutside={() => setShowSaveMenu(false)}>
+      <div className="relative">
+        <button
+          onClick={() => setShowSaveMenu(!showSaveMenu)}
+          data-tooltip="Save to your device"
+          className="tooltip tlt-b flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732]"
+        >
+          <SaveIcon />
+        </button>
+
+        <AnimatePresence>
+          {showSaveMenu && <SaveToDeviceMenu />}
+        </AnimatePresence>
+      </div>
+    </ClickAway>
   );
 };
 

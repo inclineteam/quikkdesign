@@ -16,11 +16,7 @@ const ClickAway = ({ children, onClickOutside }) => {
     };
   }, [onClickOutside]);
 
-  return (
-    <div>
-      <div ref={childRef}>{children}</div>
-    </div>
-  );
+  return <div ref={childRef}>{children}</div>;
 };
 
 export default ClickAway;

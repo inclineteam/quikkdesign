@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { useEditorStore } from "@/contexts/EditorContext";
 import { LayoutGroup } from "framer-motion";
-import { ReactComponent as WandIcon } from "@/assets/wand-icon.svg";
+import { WandIcon, ActiveEditorIcon } from "@/assets";
 
 const Indicator = () => {
   const { jQueryPlugin, bootstrapPlugin, tailwindPlugin } =
@@ -17,7 +17,7 @@ const Indicator = () => {
           data-tooltip="Active superpowers"
           className="tooltip tlt-bl group flex items-center"
         >
-          <WandIcon className="h-6 w-6 [&>g]:fill-gray-500 group-hover:[&>g]:fill-purple-500" />
+          <WandIcon className="h-6 w-6 [&>g]:fill-slate-500 group-hover:[&>g]:fill-purple-500" />
         </div>
         {jQueryPlugin || bootstrapPlugin || tailwindPlugin ? (
           <LayoutGroup>
@@ -71,7 +71,7 @@ const Indicator = () => {
             initial={{ opacity: 0, translateY: 10 }}
             animate={{ opacity: 1, translateY: 0 }}
             exit={{ opacity: 0, translateY: 10 }}
-            className="rounded-full bg-rose-500/10 px-3 py-1 text-rose-400"
+            className="rounded-full bg-rose-500/10 px-3 py-1 font-medium text-rose-400"
           >
             None
           </motion.div>
@@ -84,8 +84,14 @@ const Indicator = () => {
             animate={{ opacity: 1, translateY: 0 }}
             exit={{ opacity: 0, translateY: 10 }}
           >
-            <div className="w-max items-center space-x-4 rounded-full rounded-full bg-subtle-bg px-3 py-2 text-sm font-medium text-[#EBEBF4] duration-200">
-              Active: <span className="uppercase">{currentEditor}</span>
+            <div
+              data-tooltip="Active editor"
+              className="tooltip tlt-br group flex w-max cursor-default items-center rounded-full rounded-full bg-subtle-bg py-2 pl-3 pr-4 text-sm font-medium text-[#EBEBF4] duration-200"
+            >
+              <div className="mr-3">
+                <ActiveEditorIcon className="h-5 w-5 [&>g]:stroke-slate-500 group-hover:[&>g]:stroke-cyan-400" />
+              </div>
+              <span className="uppercase">{currentEditor}</span>
             </div>
           </motion.div>
         )}

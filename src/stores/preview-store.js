@@ -8,6 +8,20 @@ import preferencesStore from "./preferences-store";
 const previewStore = createStore((set) => ({
   sourceDoc: "",
   previewRef: createRef(),
+  screenRef: createRef(),
+  responsiveScreenRef: createRef(),
+  screenHeight: 0,
+  screenWidth: 0,
+  maxScreenWidth: 0,
+  resizer: false,
+  responsiveScreenWidth: 0,
+  responsiveScreenHeight: 0,
+  toggleResizer: (bool) => set({ resizer: bool }),
+  updateMaxScreenWidth: (sz) => set({ maxScreenWidth: sz }),
+  updateScreenHeight: (sz) => set({ screenHeight: sz }),
+  updateScreenWidth: (sz) => set({ screenWidth: sz }),
+  updateResponsiveScreenHeight: (sz) => set({ responsiveScreenHeight: sz }),
+  updateResponsiveScreenWidth: (sz) => set({ responsiveScreenWidth: sz }),
   updateSourceDoc: () =>
     set({
       sourceDoc: `

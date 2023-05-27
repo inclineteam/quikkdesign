@@ -2,8 +2,8 @@ import prettier from "prettier/standalone";
 import htmlParser from "prettier/parser-html";
 import cssParser from "prettier/parser-postcss";
 import jsParser from "prettier/parser-babel";
-import { ReactComponent as FormatIcon } from "@/assets/format-icon.svg";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
+import { FormatIcon } from "@/assets";
 
 const FormatBtn = ({ type, value, update }) => {
   const { isMinimized } = useCodeEditorContext();

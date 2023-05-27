@@ -1,9 +1,9 @@
-import { ReactComponent as ShareIcon } from "@/assets/share-icon.svg";
+import { ShareIcon } from "@/assets";
 import ClickAway from "@/components/ClickAway";
 import clsx from "clsx";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import ShareMenu from "./ShareMenu";
+import { ShareMenu } from "@/components/menu";
 
 const ShareBtn = () => {
   const [showShareMenu, setShowShareMenu] = useState(false);
@@ -15,7 +15,7 @@ const ShareBtn = () => {
           onClick={() => setShowShareMenu(!showShareMenu)}
           data-tooltip="Share"
           className={
-            "tooltip tlt-b flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732] " +
+            "flex items-center justify-center rounded-xl p-1.5 text-white/80 duration-100 hover:bg-[#252732] " +
             clsx({
               "tooltip tlt-b": !showShareMenu,
               "bg-[#303340]": showShareMenu,

@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import FontSizeOption from "./appearance/FontSize";
-import TabSizeOption from "./appearance/TabSize";
-import BootstrapIconsOption from "./icons/BootstrapIcons";
-import IoniconsOption from "./icons/Ionicons";
-import BootstrapOption from "./superpowers/Bootstrap";
-import JQueryOption from "./superpowers/JQuery";
-import TailwindOption from "./superpowers/Tailwind";
-import { ReactComponent as PaletteIcon } from "@/assets/palette-icon.svg";
-import { ReactComponent as WandIcon } from "@/assets/wand-icon.svg";
-import { ReactComponent as LibraryIcon } from "@/assets/library-icon.svg";
+import {
+  FontSizeOption,
+  TabSizeOption,
+  BootstrapIconsOption,
+  IoniconsOption,
+  BootstrapOption,
+  JQueryOption,
+  TailwindOption,
+} from "@/components/Header/Preferences";
+import { LibraryIcon, PaletteIcon, WandIcon } from "@/assets";
 
 const PreferencesMenu = () => {
   return (

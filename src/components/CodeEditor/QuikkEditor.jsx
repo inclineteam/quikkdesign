@@ -4,17 +4,16 @@ import ReactCodeMirror from "@uiw/react-codemirror";
 import clsx from "clsx";
 import { oneDark } from "@/themes/onedark";
 import { colorPicker } from "@replit/codemirror-css-color-picker";
-import {
-  abbreviationTracker,
-  expandAbbreviation,
-} from "@emmetio/codemirror6-plugin";
 import { keymap } from "@codemirror/view";
 import CodeEditorHeader from "./CodeEditorHeader";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
 import { useEditorStore } from "@/contexts/EditorContext";
-import FormatBtn from "./FormatBtn";
-import ToggleBtn from "./ToggleBtn";
 import { usePreferencesStore } from "@/contexts/PreferencesContext";
+import { FormatBtn, ToggleBtn } from "@/ui/buttons";
+import {
+  abbreviationTracker,
+  expandAbbreviation,
+} from "@emmetio/codemirror6-plugin";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();

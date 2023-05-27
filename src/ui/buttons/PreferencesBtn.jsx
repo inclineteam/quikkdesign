@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import clsx from "clsx";
-import PreferencesMenu from "./PreferencesMenu";
+import { PreferencesMenu } from "@/components/menu";
 import ClickAway from "@/components/ClickAway";
-import { ReactComponent as SettingsIcon } from "@/assets/settings-icon.svg";
+import { SettingsIcon } from "@/assets";
 
 const PreferencesBtn = () => {
   const [showPref, setShowPref] = useState(false);

@@ -1,16 +1,15 @@
 import ProjectName from "./ProjectName";
 import Logo from "../Logo";
-import SaveToDeviceBtn from "./SaveToDeviceBtn";
-import PreferencesBtn from "./Preferences/PreferencesBtn";
 import { usePreviewStore } from "@/contexts/PreviewContext";
-import { ReactComponent as SaveIcon } from "@/assets/save-icon.svg";
-import { ReactComponent as EyeIcon } from "@/assets/eye-icon.svg";
-import { ReactComponent as BuildIcon } from "@/assets/build-icon.svg";
-import { ReactComponent as LogoGithubIcon } from "@/assets/logo/logo-github.svg";
+import { BuildIcon, EyeIcon, BoltIcon, LogoGithubIcon } from "@/assets";
 import clsx from "clsx";
-import DownloadAppBtn from "./Download/DownloadAppBtn";
-import HelpBtn from "./Help/HelpBtn";
-import ShareBtn from "./Share/ShareBtn";
+import {
+  DownloadAppBtn,
+  HelpBtn,
+  ShareBtn,
+  PreferencesBtn,
+  SaveToDeviceBtn,
+} from "@/ui/buttons";
 
 const Header = () => {
   const { previewRef, updateSourceDoc } = usePreviewStore();
@@ -26,7 +25,7 @@ const Header = () => {
             data-tooltip="Save"
             className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
-            <SaveIcon className="h-5 w-5" />
+            <BoltIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Save</span>
           </button>
 
@@ -65,7 +64,7 @@ const Header = () => {
           href="https://github.com/inclineteam/quikkdesign"
           target="_blank"
           rel="noreferrer noopener"
-          data-tooltip="Support"
+          data-tooltip="Support us!"
           className={
             "tooltip flex items-center justify-center rounded-xl p-1.5 duration-100 hover:bg-[#252732] " +
             clsx({

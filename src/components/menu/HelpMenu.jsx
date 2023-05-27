@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactComponent as CommandIcon } from "@/assets/command-icon.svg";
-import { ReactComponent as ChevronDownIcon } from "@/assets/chevron-down-icon.svg";
+import { CommandIcon } from "@/assets";
 
 const HelpMenu = () => {
   return (

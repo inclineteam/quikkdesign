@@ -1,8 +1,6 @@
 import clsx from "clsx";
+import { LogoCSSIcon, LogoHTMLIcon, LogoJSIcon } from "@/assets";
 import { useCodeEditorContext } from "@/contexts/CodeEditorContext";
-import { ReactComponent as LogoCSSIcon } from "@/assets/logo/logo-css3.svg";
-import { ReactComponent as LogoHTMLIcon } from "@/assets/logo/logo-html5.svg";
-import { ReactComponent as LogoJSIcon } from "@/assets/logo/logo-javascript.svg";
 
 const icons = {
   html: <LogoHTMLIcon className="h-5 w-5" />,
