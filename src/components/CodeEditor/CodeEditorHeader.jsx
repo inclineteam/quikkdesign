@@ -19,12 +19,10 @@ const CodeEditorHeader = ({ children, type }) => {
 
   return (
     <header
-      className={
-        "flex items-center justify-between rounded-xl border-t border-white/10 bg-[#2E313E] py-1 pl-4 pr-2 text-sm uppercase text-[#898EA1] shadow duration-200 " +
-        clsx({
-          "!border-transparent bg-transparent !pl-2 shadow-none": isMinimized,
-        })
-      }
+      className={clsx(
+        "flex items-center justify-between rounded-md border-t border-white/10 bg-[#2E313E] py-1 pl-4 pr-2 text-sm uppercase text-[#898EA1] shadow duration-200",
+        isMinimized && "!border-transparent bg-transparent !pl-2 shadow-none"
+      )}
     >
       <div className={"flex items-center space-x-2 " + iconColors[type]}>
         {icons[type]}

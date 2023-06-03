@@ -19,11 +19,11 @@ const Header = () => {
       <div className="flex items-center space-x-4">
         <Logo />
 
-        <div className="flex space-x-2 rounded-full border-t border-white/10 bg-[#2E313E] px-3 py-1">
+        <div className="flex space-x-2 rounded-md border-t border-white/10 bg-[#2E313E] p-1">
           <button
             onClick={updateSourceDoc}
             data-tooltip="Save"
-            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
+            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-md px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
             <BoltIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Save</span>
@@ -34,7 +34,7 @@ const Header = () => {
               previewRef.current?.scrollIntoView({ behavior: "smooth" })
             }
             data-tooltip="Preview"
-            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
+            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-md px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
             <EyeIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Preview</span>
@@ -46,7 +46,7 @@ const Header = () => {
               previewRef.current?.scrollIntoView({ behavior: "smooth" });
             }}
             data-tooltip="Save and Preview (Ctrl + s)"
-            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-xl px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
+            className="tooltip tlt-b flex flex items-center justify-center space-x-2 rounded-md px-2 py-1 text-[#EBEBF4] duration-100 hover:bg-white/[0.05]"
           >
             <BuildIcon className="h-5 w-5" />
             <span className="text-sm font-semibold">Run</span>

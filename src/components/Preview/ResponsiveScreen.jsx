@@ -1,5 +1,6 @@
 import { usePreviewStore } from "@/contexts/PreviewContext";
 import { Resizable } from "re-resizable";
+import { useState } from "react";
 import { useEffect } from "react";
 
 const ResponsiveScreen = () => {

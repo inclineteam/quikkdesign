@@ -19,11 +19,10 @@ const ProjectName = () => {
 
   return (
     <div
-      className={`z-50 flex items-center space-x-2 rounded-xl border-t border-white/10 bg-[#2E313E] py-1 pl-3 pr-2 text-white/80 shadow shadow-black/10 duration-200 ${clsx(
-        {
-          "translate-y-5": edit,
-        }
-      )}`}
+      className={clsx(
+        "z-50 flex items-center space-x-2 rounded-md border-t border-white/10 bg-[#2E313E] py-1 pl-3 pr-2 text-white/80 ring-2 duration-200",
+        edit ? "ring-violet-500" : "ring-transparent"
+      )}
     >
       <input
         value={projectName}
@@ -44,7 +43,7 @@ const ProjectName = () => {
         <button
           data-tooltip="Done"
           onClick={() => setEdit(false)}
-          className="tooltip tlt-b rounded-lg p-1 text-sky-300 hover:bg-sky-500/20 hover:text-sky-300"
+          className="tooltip tlt-b rounded-lg p-1 text-violet-300 hover:bg-violet-500/20 hover:text-violet-300"
         >
           <ArrowUpIcon className="h-4 w-4" />
         </button>

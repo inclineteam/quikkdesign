@@ -2,6 +2,7 @@ import { usePreviewStore } from "@/contexts/PreviewContext";
 import clsx from "clsx";
 import { useEffect } from "react";
 import ResponsiveScreen from "./ResponsiveScreen";
+import { useState } from "react";
 
 const Screen = () => {
   const {

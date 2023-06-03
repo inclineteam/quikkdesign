@@ -86,7 +86,7 @@ export const oneDarkTheme = EditorView.theme(
 
     ".cm-activeLine": {
       backgroundColor: "transparent",
-      borderRadius: "8px",
+      borderRadius: "4px",
     },
     ".cm-selectionMatch": { backgroundColor: "#aafe661a" },
 
