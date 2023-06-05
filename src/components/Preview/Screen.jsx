@@ -1,8 +1,8 @@
 import { usePreviewStore } from "@/contexts/PreviewContext";
 import clsx from "clsx";
 import { useEffect } from "react";
+import ScreenSize from "./ScreenSize";
 import ResponsiveScreen from "./ResponsiveScreen";
-import { useState } from "react";
 
 const Screen = () => {
   const {
@@ -40,19 +40,16 @@ const Screen = () => {
         clsx({ "px-5": resizer })
       }
     >
-      {resizer ? (
-        <ResponsiveScreen />
-      ) : (
-        <iframe
-          ref={screenRef}
-          srcDoc={sourceDoc}
-          title="output"
-          sandbox="allow-scripts"
-          width="100%"
-          height="100%"
-          className="rounded-xl border-0 bg-white"
-        />
-      )}
+      <ResponsiveScreen />
+      <iframe
+        ref={screenRef}
+        srcDoc={sourceDoc}
+        title="output"
+        sandbox="allow-scripts"
+        width="100%"
+        height="100%"
+        className={clsx("rounded-xl border-0 bg-white", resizer && "hidden")}
+      />
     </div>
     // </div>
   );

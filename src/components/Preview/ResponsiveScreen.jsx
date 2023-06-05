@@ -11,6 +11,7 @@ const ResponsiveScreen = () => {
     responsiveScreenHeight,
     updateResponsiveScreenHeight,
     updateResponsiveScreenWidth,
+    resizer,
   } = usePreviewStore();
 
   useEffect(() => {
@@ -31,6 +32,7 @@ const ResponsiveScreen = () => {
 
   return (
     <Resizable
+      className={!resizer && "hidden"}
       maxHeight="100%"
       maxWidth="100%"
       handleComponent={{
