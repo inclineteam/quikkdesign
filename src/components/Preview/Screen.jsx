@@ -30,10 +30,6 @@ const Screen = () => {
   }, []);
 
   return (
-    // <div
-    //   style={{ width: screenWidth > 0 ? screenWidth + "px" : "100%" }}
-    //   className="relative "
-    // >
     <div
       className={
         "relative flex h-full w-full items-center justify-center " +
@@ -51,7 +47,6 @@ const Screen = () => {
         className={clsx("rounded-xl border-0 bg-white", resizer && "hidden")}
       />
     </div>
-    // </div>
   );
 };
 

@@ -47,12 +47,10 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
 
   return (
     <div
-      className={
-        "h-max space-y-2 rounded-xl bg-subtle-bg p-2 duration-200 first:border-l-0 " +
-        clsx({
-          "flex-1": !isMinimized,
-        })
-      }
+      className={clsx(
+        "h-max w-full space-y-2 rounded-xl border-t border-white/10 bg-subtle-bg p-2 duration-200",
+        isMinimized && "w-max border-transparent"
+      )}
     >
       <CodeEditorHeader type={type} icon={icon}>
         <FormatBtn type={type} value={value} update={update} />

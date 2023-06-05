@@ -19,7 +19,12 @@ const Preview = () => {
   }, []);
 
   return (
-    <div className="relative flex h-screen flex-col bg-gradient-to-b from-[#16171D] to-[#381b50] p-5">
+    <div
+      className={clsx(
+        "relative flex h-screen flex-col bg-gradient-to-b from-[#16171D] to-[#381b50] p-5",
+        resizer && "pt-10"
+      )}
+    >
       <Screen />
       <div
         className={
@@ -38,8 +43,13 @@ const Preview = () => {
             onClick={() => toggleResizer(!resizer)}
             className="flex items-center space-x-2 rounded-lg bg-transparent px-3 font-medium text-white duration-200"
           >
-            <MobileIcon className="h-5 w-5 [&>g]:stroke-white" />
-            <span className={clsx({ "font-medium text-cyan-400": resizer })}>
+            <MobileIcon
+              className={clsx(
+                "h-5 w-5 [&>g]:stroke-white",
+                resizer && "[&>g]:stroke-cyan-300"
+              )}
+            />
+            <span className={clsx("font-medium", resizer && "text-cyan-300")}>
               Responsive
             </span>
           </button>
