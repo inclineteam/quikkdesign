@@ -14,11 +14,14 @@ import {
   abbreviationTracker,
   expandAbbreviation,
 } from "@emmetio/codemirror6-plugin";
+import { useBeforeUnload } from "@/hooks/useBeforeUnload";
+import { useState } from "react";
 
 const QuikkEditor = ({ lang, value, update, icon, type }) => {
   const { isMinimized } = useCodeEditorContext();
   const { updateCurrentEditor } = useEditorStore();
   const { tabSize, fontSize } = usePreferencesStore();
+  const [unsaved, setUnsaved] = useState(false);
 
   // returns the needed extension for each editor
   const exts = () => {
@@ -60,8 +63,10 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
         height="70vh"
         extensions={exts()}
         onFocus={() => updateCurrentEditor(type)}
-        value={value}
-        onChange={(val) => update(val)}
+        value={isMinimized ? '' : value }
+        onChange={(val) => {
+          update(val);
+        }}
         style={{
           fontSize: fontSize + "px",
         }}
