@@ -63,7 +63,7 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
         height="70vh"
         extensions={exts()}
         onFocus={() => updateCurrentEditor(type)}
-        value={isMinimized ? '' : value }
+        value={value}
         onChange={(val) => {
           update(val);
         }}
@@ -71,10 +71,10 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
           fontSize: fontSize + "px",
         }}
         className={
-          "w-full overflow-hidden rounded-xl duration-150 [&>.cm-focused]:outline-hidden " +
-          clsx({
-            "opacity-0": isMinimized,
-          })
+          clsx(
+          "overflow-hidden rounded-xl duration-150 transition-opacity [&>.cm-focused]:outline-hidden ",
+            isMinimized ? "opacity-0 w-0"  : 'w-full',
+          )
         }
         theme={oneDark}
       />
