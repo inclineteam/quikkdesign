@@ -18,7 +18,7 @@ const Indicator = () => {
         className="tooltip tlt-bl flex w-max items-center space-x-3 rounded-md bg-subtle-bg py-1.5 pl-3 pr-1.5 text-sm text-[#EBEBF4]"
       >
         <div className="group flex items-center">
-          <WandIcon className="h-6 w-6 [&>g]:fill-slate-500 group-hover:[&>g]:fill-purple-500" />
+          <WandIcon className="h-6 w-6 [&>g]:fill-slate-500 [&>g]:group-hover:fill-purple-500" />
         </div>
         {jQueryPlugin || bootstrapPlugin || tailwindPlugin ? (
           <LayoutGroup>
@@ -90,11 +90,11 @@ const Indicator = () => {
               className="tooltip tlt-br group flex w-max cursor-default items-center rounded-full rounded-md bg-subtle-bg p-1.5 pl-3 text-sm font-medium duration-200"
             >
               <div className="mr-3">
-                <ActiveEditorIcon className="h-5 w-5 [&>g]:stroke-slate-500 group-hover:[&>g]:stroke-cyan-400" />
+                <ActiveEditorIcon className="h-5 w-5 [&>g]:stroke-slate-500 [&>g]:group-hover:stroke-cyan-400" />
               </div>
               <div
                 className={clsx(
-                  "rounded px-3 py-1",
+                  "rounded-sm px-3 py-1",
                   currentEditor === "html" && "bg-amber-500/10 text-amber-400",
                   currentEditor === "css" && "bg-sky-500/10 text-sky-400",
                   currentEditor === "js" && "bg-yellow-500/10 text-yellow-400"

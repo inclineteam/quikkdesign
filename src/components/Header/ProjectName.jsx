@@ -27,7 +27,7 @@ const ProjectName = () => {
       <input
         value={projectName}
         onChange={(e) => updateProjectName(e.target.value)}
-        className={`w-max bg-transparent text-sm font-medium outline-none duration-200 ${clsx(
+        className={`w-max bg-transparent text-sm font-medium outline-hidden duration-200 ${clsx(
           {
             "text-white": edit,
             "text-[#EBEBF4]": !edit,

@@ -21,7 +21,7 @@ const Preview = () => {
   return (
     <div
       className={clsx(
-        "relative flex h-screen flex-col bg-gradient-to-b from-[#16171D] to-[#381b50] p-5",
+        "relative flex h-screen flex-col bg-linear-to-b from-[#16171D] to-[#381b50] p-5",
         resizer && "pt-10"
       )}
     >
@@ -33,7 +33,7 @@ const Preview = () => {
         }
       >
         <button className="flex items-center space-x-2 rounded-lg px-3 font-medium text-white">
-          <div className="h-3.5 w-3.5 rounded bg-white"></div>
+          <div className="h-3.5 w-3.5 rounded-sm bg-white"></div>
           <span>Rounded</span>
         </button>
 

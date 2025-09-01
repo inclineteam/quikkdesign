@@ -66,7 +66,7 @@ const QuikkEditor = ({ lang, value, update, icon, type }) => {
           fontSize: fontSize + "px",
         }}
         className={
-          "w-full overflow-hidden rounded-xl duration-150 [&>.cm-focused]:outline-none " +
+          "w-full overflow-hidden rounded-xl duration-150 [&>.cm-focused]:outline-hidden " +
           clsx({
             "opacity-0": isMinimized,
           })

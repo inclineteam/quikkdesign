@@ -37,16 +37,16 @@ const ResponsiveScreen = () => {
       maxWidth="100%"
       handleComponent={{
         right: (
-          <div className="absolute -right-3 top-1/2 h-32 w-1.5 -translate-y-1/2 rounded-sm bg-cyan-300"></div>
+          <div className="absolute -right-3 top-1/2 h-32 w-1.5 -translate-y-1/2 rounded-xs bg-cyan-300"></div>
         ),
         left: (
-          <div className="absolute -left-3 top-1/2 h-32 w-1.5 -translate-y-1/2 rounded-sm bg-cyan-300"></div>
+          <div className="absolute -left-3 top-1/2 h-32 w-1.5 -translate-y-1/2 rounded-xs bg-cyan-300"></div>
         ),
         bottom: (
-          <div className="absolute -bottom-3 left-1/2 h-1.5 w-32 -translate-x-1/2 rounded-sm bg-cyan-300"></div>
+          <div className="absolute -bottom-3 left-1/2 h-1.5 w-32 -translate-x-1/2 rounded-xs bg-cyan-300"></div>
         ),
         top: (
-          <div className="absolute -top-3 left-1/2 h-1.5 w-32 -translate-x-1/2 rounded-sm bg-cyan-300"></div>
+          <div className="absolute -top-3 left-1/2 h-1.5 w-32 -translate-x-1/2 rounded-xs bg-cyan-300"></div>
         ),
       }}
       defaultSize={{

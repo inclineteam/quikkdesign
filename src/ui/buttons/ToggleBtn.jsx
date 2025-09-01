@@ -38,9 +38,9 @@ const ToggleBtn = ({ type }) => {
         onClick={toggleEditor}
       >
         {isMinimized ? (
-          <ExpandIcon className="h-6 w-6 group-hover:[&>path]:stroke-cyan-400" />
+          <ExpandIcon className="h-6 w-6 [&>path]:group-hover:stroke-cyan-400" />
         ) : (
-          <MinimizeIcon className="h-6 w-6 group-hover:[&>path]:stroke-cyan-400" />
+          <MinimizeIcon className="h-6 w-6 [&>path]:group-hover:stroke-cyan-400" />
         )}
       </button>
     </div>

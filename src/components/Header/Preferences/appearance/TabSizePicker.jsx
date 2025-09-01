@@ -29,7 +29,7 @@ const Option = ({ size }) => {
       className={
         "block rounded-lg border-t py-0.5 pl-2 pr-8 text-left duration-150 " +
         clsx({
-          "border-[#6D7596] bg-[#454B64] shadow-sm": tabSize === size,
+          "border-[#6D7596] bg-[#454B64] shadow-xs": tabSize === size,
           "border-transparent hover:bg-[#383C4D]": tabSize !== size,
         })
       }

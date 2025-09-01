@@ -19,7 +19,7 @@ const TabSizeOption = () => {
           <button
             onClick={() => setShowPicker(!showPicker)}
             className={
-              "flex h-6 w-12 items-center justify-between space-x-2 rounded-md border-t border-[#494F68] bg-[#343849] px-2 text-left text-gray-200 shadow-sm outline-none duration-200 placeholder:text-gray-300 " +
+              "flex h-6 w-12 items-center justify-between space-x-2 rounded-md border-t border-[#494F68] bg-[#343849] px-2 text-left text-gray-200 shadow-xs outline-hidden duration-200 placeholder:text-gray-300 " +
               clsx({
                 "border-white/20 bg-[#474B62]": showPicker,
               })

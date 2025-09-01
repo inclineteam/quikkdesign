@@ -9,7 +9,7 @@ const HelpMenu = () => {
       exit={{ opacity: 0, translateY: 10 }}
       className="absolute right-0 z-50 mt-2 w-56 space-y-2 rounded-md border border-[#383C4F] bg-menu-bg p-2 text-sm text-white shadow-xl"
     >
-      <div className="space-y-2 rounded bg-black/20 p-3 text-gray-100">
+      <div className="space-y-2 rounded-sm bg-black/20 p-3 text-gray-100">
         <header className="mb-3 flex items-center space-x-2 font-medium text-[#81869E]">
           <CommandIcon className="h-4 w-4" />
           <div>Keybindings</div>
@@ -30,7 +30,7 @@ const HelpMenu = () => {
         </div>
       </div>
 
-      <div className="space-y-2 rounded bg-black/20 p-3 text-gray-100">
+      <div className="space-y-2 rounded-sm bg-black/20 p-3 text-gray-100">
         Found any bugs? you can report it to us on{" "}
         <a
           href="https://github.com/inclineteam/quikkdesign"

@@ -46,7 +46,7 @@ const FormatBtn = ({ type, value, update }) => {
             className="tooltip tlt-b group flex items-center rounded-xl p-1 hover:bg-yellow-500/10"
             onClick={formatCode}
           >
-            <FormatIcon className="h-6 w-6 group-hover:[&>path]:fill-yellow-400" />
+            <FormatIcon className="h-6 w-6 [&>path]:group-hover:fill-yellow-400" />
           </button>
         </div>
       )}

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./css/index.css";
-import "./css/tooltip.css";
 import PreviewContextProvider from "./contexts/PreviewContext";
 import EditorContextProvider from "./contexts/EditorContext";
 import ProjectContextProvider from "./contexts/ProjectContext";
